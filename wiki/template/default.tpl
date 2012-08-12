@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="image/x-icon" rel="icon" href="favicon.ico" />
+<link type="image/x-icon" rel="shortcut icon" href="favicon.ico" />
+<!--[if IE]><script type="text/javascript" src="%root_path%js/html5.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="%root_path%css/style.css" />
+<link rel="stylesheet" type="text/css" href="%root_path%/css/vim-like.css" />
+<link type="text/css" rel="stylesheet" href="%root_path%syntaxhighlighter/styles/shCoreEclipse.css" /> 
+<link type="text/css" rel="stylesheet" href="%root_path%syntaxhighlighter/styles/shThemeEclipse.css" /> 
+<script type="text/javascript" src="%root_path%syntaxhighlighter/scripts/shCore.js"></script> 
+<script type="text/javascript" src="%root_path%syntaxhighlighter/scripts/shBrushPython.js"></script>
+<script type="text/javascript" src="%root_path%syntaxhighlighter/scripts/shBrushCpp.js"></script>
+<script type="text/javascript" src="%root_path%syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="%root_path%syntaxhighlighter/scripts/shBrushSQL.js"></script>
+<script type="text/javascript" src="%root_path%syntaxhighlighter/scripts/shBrushCSS.js"></script>
+<script type="text/javascript" src="%root_path%syntaxhighlighter/scripts/shBrushBash.js"></script>
+<script type="text/javascript" src="%root_path%syntaxhighlighter/scripts/shBrushVim.js"></script>
+<script type="text/javascript">
+  SyntaxHighlighter.all();
+  </script> 
+<title>%title% - Happily84.Wiki</title>
+</head>
+<body>
+<div id="wrapper">
+<header>
+<nav>
+    <ul>
+        <li class="first"><a href="../index.html" title="Home">Home</a></li>
+        <li><a href="../blog/index.html" title="Blog">Blog</a></li>
+        <li class="actived"><a href="index.html" title="Wiki">Wiki</a></li>
+        <li><a href="https://twitter.com/happily84" title="Twitter">Twitter</a></li>
+        <li><a href="http://github.com/happily84" title="Project">Project</a></li>
+        <li class="last"><a href="../resume/resume.html" title="About Me">Readme</a></li>
+    </ul>
+</nav>
+</header>
+<article>
+
+%content%
+
+</article>
+<footer>
+    <a href="index.html" id="back-home">&lsaquo; 首页</a>
+    <p><a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" style="border-width: 0pt;" src="http://i.creativecommons.org/l/by/2.5/88x31.png" align="right"></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 Generic License</a>.<br>
+    Copyleft © 2010, Driven by <a href="http://code.google.com/p/vimwiki/">Vimwiki</a>, Theme by 闲耘™(@hotoo).
+    </p>
+</footer>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<!--[if lte IE 6]><script type="text/javascript" src="js/ie6.js"></script><![endif]-->
+<!-- <script type="text/javascript" src="js/WikiWords.js"></script>
+<script type="text/javascript" src="js/vim-like.js"></script> -->
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-15922433-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
