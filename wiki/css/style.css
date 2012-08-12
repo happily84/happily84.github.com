@@ -107,6 +107,10 @@ a:hover{text-decoration:underline;}
 #wrapper article a[href^="http://"]:hover,
 #wrapper article a[href^="https://"]:hover{background-position:right -30px;}
 #wrapper article a.external:hover{background-position:right -30px;}
+#wrapper article ul li.done4{color:green}
+#wrapper article ul li.done0{color:red}
+
+
 
 h1 a[href^="http://"],
 h1 a[href^="https://"],
