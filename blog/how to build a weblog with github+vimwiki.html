@@ -43,11 +43,77 @@
 <h1 id="toc_1">How to setup a personal weblog with github and vimwiki</h1>
 
 <p>
-Todo
+2012/08/12 20:28:50 begin 
 </p>
 
+<h2 id="toc_1.1">1. register a github</h2>
+
+<ol>
+<li>
+You should register your github account from <a href="http://www.github.com">http://www.github.com</a> . 
+
+<li>
+Create a repo named yourname.github.com ( be careful, it MUST BE named yourname.github.com, or you cannot visit your page using yourname.github.com later.)
+
+<li>
+get a clone from github. revise and upload using <code>git pull</code> <code>git commit</code> <code>git push</code> or something like this. Or you can write a shell script to upload code.
+
+</ol>
+
+<h2 id="toc_1.2">2. prepare for vimwiki</h2>
+
+<ol>
+<li>
+You should have a vim in Linux MacOS or Windows. :)
+
+<li>
+Download vimwiki script from <a href="http://www.vim.org/scripts/script.php?script_id=2226">http://www.vim.org/scripts/script.php?script_id=2226</a> 
+
+<li>
+config your personal <code>vimrc</code>. Locate your vimwiki path to the github project directory. ( I am not recommand you also to locate your vimwiki source path to the project directory. )
+
+<li>
+write your own css file, and config template path in <code>vimrc</code> if you need.
+
+<li>
+happy your weblog.
+
+</ol>
+
+<h2 id="toc_1.3">3. Tips cannot search from Google</h2>
+
+<ol>
+<li>
+In current version of vimwiki (version 2.0.1) , using <code>template_path</code> <code>template_default</code> <code>template_ext</code> instead <code>header_path</code> and <code>footer_path</code>.
+
+<li>
+[Link Description] no longer supported in version 2.0.1 of vimwiki. I don't think it is a smart decision. Now I cannot find a suitable way to reslove it.
+
+<li>
+DONOT upload your personal dairy to github server :).
+
+</ol>
+
+<h2 id="toc_1.4">4. Related information</h2>
+
+<ol>
+<li>
+Introduce of vimwiki (Chinese): <a href="http://wiki.ktmud.com/tips/vim/vimwiki-guide.html">http://wiki.ktmud.com/tips/vim/vimwiki-guide.html</a>
+
+<li>
+Writing in vimwiki and github (Chinese): <a href="http://blog.hotoo.me/use-vimwiki-for-blog.html">http://blog.hotoo.me/use-vimwiki-for-blog.html</a>
+
+<li>
+Git help: <a href="https://help.github.com/">https://help.github.com/</a>
+
+<li>
+Git Pages help: <a href="http://pages.github.com/">http://pages.github.com/</a>
+
+</ol>
+
+
 <p>
-blog:datetime=2012/08/12 18:33:36:tags=
+blog:datetime=2012/08/12 18:33:36 LastModifyTime: 2012/08/12 21:46:32:tags=
 </p>
 
 
