@@ -20,7 +20,7 @@
 <script type="text/javascript">
   SyntaxHighlighter.all();
   </script> 
-<title>vim - Happily84.Wiki</title>
+<title>c++0x - Happily84.Wiki</title>
 </head>
 <body>
 <div id="wrapper">
@@ -39,94 +39,73 @@
 <article>
 
 
+<h1 id="toc_1">Introduction of Lambda in c++0x:</h1>
+
 <p>
-虽然还没想好要写什么 不过这个标签是必须的。。
+Lambda can be used like this,
 </p>
 
-<h1 id="toc_1">plugin list</h1>
 
-<ul>
-<li>
-<code>vimwiki</code>
+<pre class="brush: cpp">
 
-<li>
-<code>vim-latex</code>
+#include &lt;iostream&gt;
 
-<li>
-<code>DoxgenToolkit</code> using &lt;F3&gt;f to create
+	using  namespace std;
 
-<li>
-<code>a.vim</code> using :A and :AV
+	int main()
+	{
+		int i = 1024;
+		auto func = [=] { printf("%d\n", i); };
+		func();
 
-<li>
-<code>Nerd_commment</code> using ,cc ,cu ,cm
+		return 0;
+	}
 
-<li>
-<code>ctags</code> <code>omnicomplete</code> using &lt;c-n&gt;&lt;c-p&gt; to select
-
-<li>
-<code>copen</code> using ,oe to open quickfix window and using ,ce to close it using ,ne to go to next error and using ,ep to go to previous error
-
-<li>
-
-
-</ul>
-
-<h1 id="toc_2">skill and shortcut list</h1>
-<ul>
-<li>
-using <code>cw</code> to replace from current position to the end of this word.
-
-<li>
-using <code>0</code> to go to the head of this line
-
-<li>
-using <code>.</code> to redo last action
-
-<li>
-using number+G to go to line number
-
-<li>
-using <code>%</code> to go to match 括号
-
-<li>
-using <code>*</code> and <code>#</code> to go to match pattern
-
-<li>
-using <code>gu</code> and <code>gU</code> to switch captial or 小写 and guu gUU can change entire line
-
-<li>
-using I to insert word to the head of line, using A to insert word to end of line
-
-<li>
-
-
-</ul>
-
-<h1 id="toc_3">changelog</h1>
+</pre>
 
 <p>
-2012/09/07 22:39:13
+and in <code>[]</code> there are some options,
+</p>
+
+
+<pre class="brush: cpp">
+
+    []        Capture nothing (or, a scorched earth strategy?)
+	[&amp;]       Capture any referenced variable by reference
+	[=]       Capture any referenced variable by making a copy
+	[=, &amp;foo] Capture any referenced variable by making a copy, but capture variable foo by reference
+	[bar]     Capture bar by making a copy; don't copy anything else
+	[this]    Capture the this pointer of the enclosing class
+
+</pre>
+
+<p>
+it also can involve param, like this,
+</p>
+
+
+<pre class="brush: cpp">
+
+    #inlcude &lt;iostream&gt;
+	using namespace std;
+	int main()
+	{
+		auto func=[](int x, int y){ cout &lt;&lt; x+y &lt;&lt; endl;};
+		func( 2, 6);
+		return 0;
+	}
+
+</pre>
+<p>
+the result is 8, what a wonderful feature of c++..
 </p>
 
 <p>
-add a vim script named rainbow, which using to color the match () or {}
+It will become very very useful in STL, especially in the function of for_each(iter_begin,iter_end,[]{balabala;});
 </p>
 
 <p>
-add a command line in Vimrc to make the rainbow effective.
-</p>
-
-<p>
-2012/09/09 22:22:35
-</p>
-
-<p>
-add a vim addons named cppSyntaxCheck, when save a cpp file, vim will auto execute syntax check, and I can add some option in vimrc like below,
-</p>
-
-<p>
-<a href="http://www.vim.org/scripts/script.php?script_id=4205">http://www.vim.org/scripts/script.php?script_id=4205</a>
+So that's it. The Lambda.
 </p>
 
 

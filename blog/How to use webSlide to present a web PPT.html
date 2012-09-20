@@ -5,8 +5,7 @@
 <link type="image/x-icon" rel="icon" href="favicon.ico" />
 <link type="image/x-icon" rel="shortcut icon" href="favicon.ico" />
 <!--[if IE]><script type="text/javascript" src="js/html5.js"></script><![endif]-->
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<link rel="stylesheet" type="text/css" href="/css/vim-like.css" />
+<link rel="stylesheet" type="text/css" href="css/template.css" />
 <link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreEclipse.css" /> 
 <link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shThemeEclipse.css" /> 
 <script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script> 
@@ -20,7 +19,7 @@
 <script type="text/javascript">
   SyntaxHighlighter.all();
   </script> 
-<title>vim - Happily84.Wiki</title>
+<title>How to use webSlide to show a PPT in webbrower  - Happily84.Wiki</title>
 </head>
 <body>
 <div id="wrapper">
@@ -28,109 +27,72 @@
 <nav>
     <ul>
         <li class="first"><a href="../index.html" title="Home">Home</a></li>
-        <li><a href="../blog/index.html" title="Blog">Blog</a></li>
-        <li class="actived"><a href="index.html" title="Wiki">Wiki</a></li>
+        <li class="actived"><a href="index.html" title="Blog">Blog</a></li>
+        <li><a href="../wiki/index.html" title="Wiki">Wiki</a></li>
         <li><a href="https://twitter.com/happily84" title="Twitter">Twitter</a></li>
         <li><a href="http://github.com/happily84" title="Project">Project</a></li>
         <li class="last"><a href="../resume/resume.html" title="About Me">Readme</a></li>
     </ul>
 </nav>
 </header>
+<div id="container">
 <article>
 
 
+
+<h1 id="toc_1">How to use webSlide to do a PPT in webbrower</h1>
+
+<h2 id="toc_1.1">1. Introduce of webSlide</h2>
+
 <p>
-虽然还没想好要写什么 不过这个标签是必须的。。
+WebSlide is developed by 三水清 from China aimed to use html language to write a online PPT. It is a very convenience tool. Actually it is a web page, and using CSS3 techology made it more like PPT.
 </p>
 
-<h1 id="toc_1">plugin list</h1>
-
-<ul>
-<li>
-<code>vimwiki</code>
-
-<li>
-<code>vim-latex</code>
-
-<li>
-<code>DoxgenToolkit</code> using &lt;F3&gt;f to create
-
-<li>
-<code>a.vim</code> using :A and :AV
-
-<li>
-<code>Nerd_commment</code> using ,cc ,cu ,cm
-
-<li>
-<code>ctags</code> <code>omnicomplete</code> using &lt;c-n&gt;&lt;c-p&gt; to select
-
-<li>
-<code>copen</code> using ,oe to open quickfix window and using ,ce to close it using ,ne to go to next error and using ,ep to go to previous error
-
-<li>
-
-
-</ul>
-
-<h1 id="toc_2">skill and shortcut list</h1>
-<ul>
-<li>
-using <code>cw</code> to replace from current position to the end of this word.
-
-<li>
-using <code>0</code> to go to the head of this line
-
-<li>
-using <code>.</code> to redo last action
-
-<li>
-using number+G to go to line number
-
-<li>
-using <code>%</code> to go to match 括号
-
-<li>
-using <code>*</code> and <code>#</code> to go to match pattern
-
-<li>
-using <code>gu</code> and <code>gU</code> to switch captial or 小写 and guu gUU can change entire line
-
-<li>
-using I to insert word to the head of line, using A to insert word to end of line
-
-<li>
-
-
-</ul>
-
-<h1 id="toc_3">changelog</h1>
+<h2 id="toc_1.2">2. Example of webSlide</h2>
 
 <p>
-2012/09/07 22:39:13
+You can see a example here <a href="./webSlide/example.html">example</a>
 </p>
 
-<p>
-add a vim script named rainbow, which using to color the match () or {}
-</p>
+<h2 id="toc_1.3">3. Grammar of webSlide</h2>
 
 <p>
-add a command line in Vimrc to make the rainbow effective.
+if you want to create a PPT without any dynamic effect, you should create the slide like this
 </p>
 
-<p>
-2012/09/09 22:22:35
-</p>
+
+<pre class="brush: html">
+
+&lt;section id=" slide name" class="setp slide"&gt;
+&lt;! just coding in HTML, using ul or ui to share your idea&gt;
+
+</pre>
 
 <p>
-add a vim addons named cppSyntaxCheck, when save a cpp file, vim will auto execute syntax check, and I can add some option in vimrc like below,
+Or if you want to create a PPT with dynamic effect, the example as follows
 </p>
 
+
+<pre class="brush: html">
+
+&lt;section id="slide name" class="step slide rebuild"&gt;
+&lt;! coding as before, but if you step by step to show each line, you can code like this&gt;
+&lt;elementname data-build&gt;
+&lt;! each line using ul or ui&gt;
+&lt;/elementname&gt;
+
+</pre>
+
+
+
+
 <p>
-<a href="http://www.vim.org/scripts/script.php?script_id=4205">http://www.vim.org/scripts/script.php?script_id=4205</a>
+blog:datetime=2012/08/17 18:43:40:tags=
 </p>
 
 
 </article>
+</div>
 <footer>
     <a href="index.html" id="back-home">&lsaquo; 首页</a>
     <p><a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" style="border-width: 0pt;" src="http://i.creativecommons.org/l/by/2.5/88x31.png" align="right"></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 Generic License</a>.<br>
