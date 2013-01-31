@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="image/x-icon" rel="icon" href="favicon.ico" />
+<link type="image/x-icon" rel="shortcut icon" href="favicon.ico" />
+<!--[if IE]><script type="text/javascript" src="js/html5.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/vim-like.css" />
+<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreEclipse.css" /> 
+<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shThemeEclipse.css" /> 
+<script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script> 
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushPython.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushCpp.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushSQL.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushCSS.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushBash.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushVim.js"></script>
+<script type="text/javascript">
+  SyntaxHighlighter.all();
+  </script> 
+<title>Learning Python - Happily84.Wiki</title>
+</head>
+<body>
+<div id="wrapper">
+<header>
+<nav>
+    <ul>
+        <li class="first"><a href="../index.html" title="Home">Home</a></li>
+        <li><a href="../blog/index.html" title="Blog">Blog</a></li>
+        <li class="actived"><a href="index.html" title="Wiki">Wiki</a></li>
+        <li><a href="https://twitter.com/happily84" title="Twitter">Twitter</a></li>
+        <li><a href="http://github.com/happily84" title="Project">Project</a></li>
+        <li class="last"><a href="../resume/resume.html" title="About Me">Readme</a></li>
+    </ul>
+</nav>
+</header>
+<article>
+
+
+
+<p>
+blog
+</p>
+<ol>
+<li>
+There is a different between 'b = a' and 'b = a[:]' if a and b are both list
+
+<ul>
+<li>
+b = a means b is a pointer which now points to a
+
+<li>
+and b = a[:] means make a copy of a
+
+</ul>
+<li>
+Different betweent <code>list</code> and <code>tuple</code> is that <code>list</code> is mutable and <code>tuple</code> is inmutable
+
+<li>
+Different betweent <code>list = list + other</code> and <code>list.extend(other)</code> is that former method create a new list and copy the value of new list to oringinal list, but latter just modify the original list which will save many time espeacially in a large scale project.
+
+<ul>
+<li>
+bib: <a href="http://blog.sina.com.cn/s/blog_6eee53080100n1lg.html">http://blog.sina.com.cn/s/blog_6eee53080100n1lg.html</a>
+
+</ul>
+<li>
+Different between <code>dict</code> and <code>tuple</code>: they are two concepts, and <code>dict.items()</code> can return a <code>tuple</code>
+
+</ol>
+
+<pre class="brush: python">
+    &gt;&gt;&gt; a = {(1,2),(2,3)}
+    &gt;&gt;&gt; type(a)
+    &lt;type 'set'&gt;
+    &gt;&gt;&gt; b = (1,2)
+    &gt;&gt;&gt; b
+    (1, 2)
+    &gt;&gt;&gt; type(b)
+    &lt;type 'tuple'&gt;
+    &gt;&gt;&gt; c = [1,2]
+    &gt;&gt;&gt; type(c)
+    &lt;type 'list'&gt;
+    &gt;&gt;&gt; d = {1:2,2:3}
+    &gt;&gt;&gt; d
+    {1: 2, 2: 3}
+    &gt;&gt;&gt; type(d)
+    &lt;type 'dict'&gt;
+</pre>
+
+<ol>
+<li>
+Regular expression:
+
+<ul>
+<li>
+<code>.</code> dot means any char
+
+<li>
+<code>\w</code> means any word char
+
+<li>
+<code>\d</code> means digital
+
+<li>
+<code>\s</code> means whitespace: including space, tab, new line and <code>\S</code> means nowhitespace
+
+<li>
+<code>+</code> means 1 or more
+
+<li>
+<code>*</code> means 0 or more
+
+<li>
+e.g. <code>\w+</code> means finding 1 or more word char
+
+</ul>
+</ol>
+
+<ol>
+<li>
+DIfferent between <code>import module</code> and <code> form module import *</code>
+
+<ul>
+<li>
+Former is link all function and variable into current file, and we can use <code>module.func()</code> to call. Any modified of func and varible form module will take effect.
+
+<li>
+Latter is copy all function and variable into current file, and we can use <code>func()</code> to call. Any modified of func and varible form module will not take effect.
+
+</ul>
+</ol>
+
+
+</article>
+<footer>
+    <a href="index.html" id="back-home">&lsaquo; 首页</a>
+    <p><a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" style="border-width: 0pt;" src="http://i.creativecommons.org/l/by/2.5/88x31.png" align="right"></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 Generic License</a>.<br>
+    Copyleft © 2010, Driven by <a href="http://code.google.com/p/vimwiki/">Vimwiki</a>, Theme by 闲耘™(@hotoo).
+    </p>
+</footer>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<!--[if lte IE 6]><script type="text/javascript" src="js/ie6.js"></script><![endif]-->
+<!-- <script type="text/javascript" src="js/WikiWords.js"></script>
+<script type="text/javascript" src="js/vim-like.js"></script> -->
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-15922433-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

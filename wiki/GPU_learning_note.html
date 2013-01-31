@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="image/x-icon" rel="icon" href="favicon.ico" />
+<link type="image/x-icon" rel="shortcut icon" href="favicon.ico" />
+<!--[if IE]><script type="text/javascript" src="js/html5.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/vim-like.css" />
+<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreEclipse.css" /> 
+<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shThemeEclipse.css" /> 
+<script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script> 
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushPython.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushCpp.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushSQL.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushCSS.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushBash.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushVim.js"></script>
+<script type="text/javascript">
+  SyntaxHighlighter.all();
+  </script> 
+<title>GPU Learning Note  - Happily84.Wiki</title>
+</head>
+<body>
+<div id="wrapper">
+<header>
+<nav>
+    <ul>
+        <li class="first"><a href="../index.html" title="Home">Home</a></li>
+        <li><a href="../blog/index.html" title="Blog">Blog</a></li>
+        <li class="actived"><a href="index.html" title="Wiki">Wiki</a></li>
+        <li><a href="https://twitter.com/happily84" title="Twitter">Twitter</a></li>
+        <li><a href="http://github.com/happily84" title="Project">Project</a></li>
+        <li class="last"><a href="../resume/resume.html" title="About Me">Readme</a></li>
+    </ul>
+</nav>
+</header>
+<article>
+
+
+
+<h1 id="toc_1">GPU Learning Note</h1>
+
+<ol>
+<li>
+the relationship between <code>threads</code>, <code>block</code> and <code>SM( Streaming Multiprocessors</code>
+
+<ul>
+<li>
+<code>threads</code> and <code>block</code>: each block contains many <code>threads</code>, <code>threads</code> in same block executes same instruction, and they share data and need to synchronize.
+
+<li>
+<code>block</code> and <code>SM</code>: <code>SM</code> is a set of <code>block</code> and it uses <code>wrap</code> to schedule unit in <code>SM</code>. Each <code>SM</code> have up to a constant <code>blocks</code>. e.g. <code>G80</code> each <code>SM</code> have up to 8 <code>Blocks</code>, and each <code>warp</code> can manage up to 32 <code>threads</code>.
+
+</ul>
+</ol>
+
+<ol>
+<li>
+definition of <code>kernel</code>
+
+<ul>
+<li>
+A function that executes on the device is typically called a <code>kernel</code>
+
+</ul>
+</ol>
+<p>
+Ralated information
+</p>
+
+<ol>
+<li>
+<code>&lt;&lt;&lt; m , n &gt;&gt;&gt;</code>
+
+<ul>
+<li>
+<code>m</code> represents the number of parallel blocks in which we would like the device to execute our kernel
+
+</ul>
+</ol>
+
+<ol>
+<li>
+<code>gridDim</code>
+
+<ul>
+<li>
+This variable is a constant across all blocks and simply holds the dimensions of the grid that was launched. It is the number of blocks.
+
+</ul>
+<li>
+<code>blockDim</code>
+
+<ul>
+<li>
+It stored the number of blocks along each dimension of the entire grid
+
+</ul>
+</ol>
+
+<p>
+blog:datetime=2013/01/20 23:23:56:tags=
+</p>
+
+
+</article>
+<footer>
+    <a href="index.html" id="back-home">&lsaquo; 首页</a>
+    <p><a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" style="border-width: 0pt;" src="http://i.creativecommons.org/l/by/2.5/88x31.png" align="right"></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 Generic License</a>.<br>
+    Copyleft © 2010, Driven by <a href="http://code.google.com/p/vimwiki/">Vimwiki</a>, Theme by 闲耘™(@hotoo).
+    </p>
+</footer>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<!--[if lte IE 6]><script type="text/javascript" src="js/ie6.js"></script><![endif]-->
+<!-- <script type="text/javascript" src="js/WikiWords.js"></script>
+<script type="text/javascript" src="js/vim-like.js"></script> -->
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-15922433-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
