@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="image/x-icon" rel="icon" href="favicon.ico" />
+<link type="image/x-icon" rel="shortcut icon" href="favicon.ico" />
+<!--[if IE]><script type="text/javascript" src="js/html5.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/vim-like.css" />
+<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreEclipse.css" /> 
+<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shThemeEclipse.css" /> 
+<script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script> 
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushPython.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushCpp.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushSQL.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushCSS.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushBash.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushVim.js"></script>
+<script type="text/javascript">
+  SyntaxHighlighter.all();
+  </script> 
+<title>Compiler Midterm  - Happily84.Wiki</title>
+</head>
+<body>
+<div id="wrapper">
+<header>
+<nav>
+    <ul>
+        <li class="first"><a href="../index.html" title="Home">Home</a></li>
+        <li><a href="../blog/index.html" title="Blog">Blog</a></li>
+        <li class="actived"><a href="index.html" title="Wiki">Wiki</a></li>
+        <li><a href="https://twitter.com/happily84" title="Twitter">Twitter</a></li>
+        <li><a href="http://github.com/happily84" title="Project">Project</a></li>
+        <li class="last"><a href="../resume/resume.html" title="About Me">Readme</a></li>
+    </ul>
+</nav>
+</header>
+<article>
+
+
+
+<h1 id="toc_1">Compiler Midterm</h1>
+
+<h2 id="toc_1.1">summary</h2>
+
+<ol>
+<li>
+chapter 2 ( possible question )
+
+<ul>
+<li>
+compute the dominator set and construct the dominator tree
+
+<li>
+identify loops using dominator information
+
+<li>
+Whether a control flow graph reducible
+
+<li>
+compute the depth first numbering
+
+<li>
+indentify loops using the computed information
+
+</ul>
+<li>
+chapter 3
+
+<ul>
+<li>
+Reaching definitions
+        Definition of variable reaches a point p if there exists a path from immediately after d to p such that definition d is not killed along the path.
+
+<li>
+Available expressions
+        An expression A+B is avaliable at a point if every path from the start node to the point evaluates A+B and after the last evaluation of A+B on each path
+        there is no redefinition of either A or B.
+
+<li>
+Live variable analysis
+        A variable X is live at point p if there exists a X-clear path from p to a use of X; otherwise X is dead at p.
+
+<li>
+Very busy expressions 
+        A expression A+B is very busy at point p if for all paths starting at p and ending at the end of the program, an evaluation of A+B appears before any
+        definition of A or B.
+
+<li>
+UD Chain, which consists of a definition of a variable and all the use reachable from the definition without any other intervening definition.
+
+<li>
+DU Chain, which consists a use, and all the definition of the variable that can reach that use without any other intervening definition.
+
+</ul>
+</ol>
+
+<p>
+blog:datetime=2013/04/30 14:06:12:tags=
+</p>
+
+
+</article>
+<footer>
+    <a href="index.html" id="back-home">&lsaquo; 首页</a>
+    <p><a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" style="border-width: 0pt;" src="http://i.creativecommons.org/l/by/2.5/88x31.png" align="right"></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 Generic License</a>.<br>
+    Copyleft © 2010, Driven by <a href="http://code.google.com/p/vimwiki/">Vimwiki</a>, Theme by 闲耘™(@hotoo).
+    </p>
+</footer>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<!--[if lte IE 6]><script type="text/javascript" src="js/ie6.js"></script><![endif]-->
+<!-- <script type="text/javascript" src="js/WikiWords.js"></script>
+<script type="text/javascript" src="js/vim-like.js"></script> -->
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-15922433-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
