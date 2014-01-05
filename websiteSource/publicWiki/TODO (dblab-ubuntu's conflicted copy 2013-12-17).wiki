@@ -1,0 +1,26 @@
+%title TODO list 
+
+= TODO list =
+
+== 2012/10/25 11:44:40 ==
+
+- [X] Reading assignment of Algorithm
+- [ ] Crack the interview
+- [ ] Learning Python
+- [ ] Building body
+- [X] Buying a box to restore food and drink
+- [ ] Finish the python class day1 homework
+
+== New todo list from 2013.11.20 ==
+
+- [X] CS203 project
+- [X] CS260 take exam
+- [X] review preformance evaluation of computer network
+- [ ] Finish Resume
+- [ ] Write a survey report of `CS260`
+
+
+Ralated information
+
+blog:datetime=2012/10/25 11:43:43:tags=
+

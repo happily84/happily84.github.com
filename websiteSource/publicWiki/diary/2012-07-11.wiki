@@ -1,0 +1,14 @@
+test for new ubuntu
+and test for 中文输入是不是乱码
+test for *~
+again
+
+today install a real Ubuntu OS in my ASUS notebook.
+
+# install vim gvim vimwiki 
+# install latex support vim
+# install eclipse with cdt
+# install all Ubuntu12.04 update
+# install git for vimwiki and configure a new apeche server for web service
+# try to solve double graphic card driver problem but failure
+# install google chrome and some extensions

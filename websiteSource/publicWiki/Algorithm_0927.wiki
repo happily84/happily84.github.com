@@ -1,0 +1,56 @@
+=2012.09.27=
+
+== Today topic:Introduction of Algorithm course ==
+
+Homepage: http://www.cs.ucr.edu/~stelo/cs218fall12
+
+Textbook: [[http://happily84.github.com/wiki/source/Introduction to Algorithms, Third Edition.pdf| Introduction of Algorithm]]
+
+Reference book: 
+# [[http://happily84.github.com/wiki/source/Algorithm_Design.pdf |Algorithm Design]] ( Black book ) Author: Kleinberg etc.
+# [[http://beust.com/algorithms.pdf|Algorithm]] Author: Dasgupta etc.
+
+===score===
+
+| Exam Type | Day    |
+|-----------|--------|
+| Entrance  | Oct.4  |
+| Midterm   | Nov.8  |
+| Final     | Dec.13 |
+
+* Homework 4%*5 = 20%
+* Entrance quiz = 5%
+* Midterm		= 40%
+* Final			= 45%
+
+=== Slides ===
+# [[http://www.cs.ucr.edu/~stelo/cs218fall12/CS218Fall12-1_intro.pdf | Intro]]
+# [[http://www.cs.ucr.edu/~stelo/cs218fall12/CS218Fall12-2_analysis.pdf | Algorithm Analysis]]
+
+=== Record ===
+
+Thanks to Demon Wang :D
+
+<audio controls="controls">
+	<source src="source/CS218_09-27.MP3" type="audio/mpeg">
+</audio>
+
+And, you can download from here: http://happily84.github.com/wiki/source/CS218_09-27.MP3
+
+== just for myself ==
+
+=== Task after class ===
+
+- [ ] Reviewing Discrete Math
+- [ ] Learning Python
+
+=== Unresolve Question ===
+
+- [X] In Python, A[3:5] means A{3,4,5} or A{2,3,4}
+	* So in Python, the index i is the before cursor of element, so A[a,b} means form a to b, not including the element before index b.
+	* In _Learning Python_ , it says as follows,
+		- S[1:3] fetches from offsets 1 up to, but not including, 3
+		- S[1:] fetches from offsets 1 through the end (length)
+		- S[:-1] fetches from offsets 0 up to, but not including, the last item
+
+- [ ] If the complexity of an Algorithm is O(n^2^), so it's also in O(n^3^), So why do not we use \theta to refer to the complexity.

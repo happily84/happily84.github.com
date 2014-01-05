@@ -1,0 +1,16 @@
+%title 2013.12.17 
+
+= 2013.12.17 =
+
+# Preparing for continue the work in `Vimwiki`
+    - Set up `git` environment in dblab computer
+    - Set up `apache2` in dblab computer and configure `apache` with `127.0.1.1`, make a soft link from `happily84@github.com` to `/var/www`
+    - Begin to write diary, like what I am doing.
+# Starting writing my own resume
+    - Find out a former resume and delete some unimportant part
+    - [ ] Figure out what should I add to my Resume 
+# Contiuning reading `Thinking in Java`
+    - Take some notes about `Thinking in Java`
+
+blog:datetime=2013/12/17 13:31:26:tags=Diary
+

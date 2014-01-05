@@ -1,0 +1,39 @@
+虽然还没想好要写什么 不过这个标签是必须的。。
+
+= plugin list =
+
+- `vimwiki`
+- `vim-latex`
+- `DoxgenToolkit` using <F3>f to create
+- `a.vim` using :A and :AV
+- `Nerd_commment` using ,cc ,cu ,cm
+- `ctags` `omnicomplete` using <c-n><c-p> to select
+- `copen` using ,oe to open quickfix window and using ,ce to close it using ,ne to go to next error and using ,ep to go to previous error
+- 
+
+= skill and shortcut list =
+- using `cw` to replace from current position to the end of this word.
+- using `0` to go to the head of this line
+- using `.` to redo last action
+- using number+G to go to line number
+- using `%` to go to match 括号
+- using `*` and `#` to go to match pattern
+- using `gu` and `gU` to switch captial or 小写 and guu gUU can change entire line
+- using I to insert word to the head of line, using A to insert word to end of line
+- using ct`,` can delete all letter form current cursor to next `,`
+- using :startline#,endline#TOhtml to convert vim to html
+- using `:startline#,endline#t.` to copy the content between `stareline` and `endline` to current line.
+
+= changelog =
+
+2012/09/07 22:39:13
+
+add a vim script named rainbow, which using to color the match () or {}
+
+add a command line in Vimrc to make the rainbow effective.
+
+2012/09/09 22:22:35
+
+add a vim addons named cppSyntaxCheck, when save a cpp file, vim will auto execute syntax check, and I can add some option in vimrc like below,
+
+http://www.vim.org/scripts/script.php?script_id=4205

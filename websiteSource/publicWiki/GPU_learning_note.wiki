@@ -1,0 +1,22 @@
+%title GPU Learning Note 
+
+= GPU Learning Note =
+
+# the relationship between `threads`, `block` and `SM( Streaming Multiprocessors`
+  - `threads` and `block`: each block contains many `threads`, `threads` in same block executes same instruction, and they share data and need to synchronize.
+  - `block` and `SM`: `SM` is a set of `block` and it uses `wrap` to schedule unit in `SM`. Each `SM` have up to a constant `blocks`. e.g. `G80` each `SM` have up to 8 `Blocks`, and each `warp` can manage up to 32 `threads`.
+
+# definition of `kernel`
+  - A function that executes on the device is typically called a `kernel`
+Ralated information
+
+# `<<< m , n >>>`
+  - `m` represents the number of parallel blocks in which we would like the device to execute our kernel
+
+# `gridDim`
+  - This variable is a constant across all blocks and simply holds the dimensions of the grid that was launched. It is the number of blocks.
+# `blockDim`
+  - It stored the number of blocks along each dimension of the entire grid
+
+blog:datetime=2013/01/20 23:23:56:tags=
+

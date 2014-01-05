@@ -1,0 +1,42 @@
+%title How to use webSlide to show a PPT in webbrower 
+
+= How to use webSlide to do a PPT in webbrower =
+
+== 1. Introduce of webSlide ==
+
+WebSlide is developed by 三水清 from China aimed to use html language to write a online PPT. It is a very convenience tool. Actually it is a web page, and using CSS3 techology made it more like PPT.
+
+== 2. Example of webSlide ==
+
+You can see a example here [[./webSlide/example| example]]
+
+== 3. Grammar of webSlide ==
+
+if you want to create a PPT without any dynamic effect, you should create the slide like this
+
+
+{{{class="brush: html"
+
+<section id=" slide name" class="setp slide">
+<! just coding in HTML, using ul or ui to share your idea>
+
+}}}
+
+Or if you want to create a PPT with dynamic effect, the example as follows
+
+
+{{{class="brush: html"
+
+<section id="slide name" class="step slide rebuild">
+<! coding as before, but if you step by step to show each line, you can code like this>
+<elementname data-build>
+<! each line using ul or ui>
+</elementname>
+
+}}}
+
+
+
+
+blog:datetime=2012/08/17 18:43:40:tags=
+

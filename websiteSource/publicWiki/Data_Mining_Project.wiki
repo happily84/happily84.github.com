@@ -1,0 +1,20 @@
+%title data mining project 
+
+= data mining project =
+
+Log:
+
+2012/10/19 11:52:22
+
+Found how to get a speical data from curl and proxy,
+
+{{{class="brush: bash"
+curl -x proxyprotool:proxyaddr:port http://api.twitter.com/1/status/show/msg_number.json
+
+}}}
+
+
+Ralated information
+
+blog:datetime=2012/10/19 11:51:54:tags=
+

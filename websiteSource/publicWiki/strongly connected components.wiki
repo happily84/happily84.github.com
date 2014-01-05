@@ -1,0 +1,5 @@
+= Strongly connected components =
+
+Definition: A directed graph is called strongly connected if there is a path from each vertex in the graph to every other vertex. In particular, this means paths in each direction; a path from a to b and also a path from b to a.
+
+Wikipedia: http://en.wikipedia.org/wiki/Strongly_connected_component

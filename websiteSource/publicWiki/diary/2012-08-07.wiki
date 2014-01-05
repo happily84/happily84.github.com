@@ -1,0 +1,25 @@
+# try to install bumblebee to reslove double graphic card switch problem. -- success
+# read something about struct of c++ 
+
+{{{class="brush: c"
+	struct a{
+		int a;
+		double b;
+		int c;
+	};
+}}}
+
+in this struct, it cost 24 bit to save the data;
+
+however in
+
+{{{class="brush: c"
+	struct a{
+		int a;
+		int b;
+		double c;
+	};
+}}}
+
+only cost 16 bits to save the data; because in cpp, 保持对齐 = = 与站位最长的
+

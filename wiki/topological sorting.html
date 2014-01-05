@@ -20,7 +20,7 @@
 <script type="text/javascript">
   SyntaxHighlighter.all();
   </script> 
-<title>CS218 Algorithm note - Happily84.Wiki</title>
+<title>topological sorting - Happily84.Wiki</title>
 </head>
 <body>
 <div id="wrapper">
@@ -39,153 +39,64 @@
 <article>
 
 
-<h1 id="toc_1">2012.09.27</h1>
-
-<h2 id="toc_1.1">Today topic:Introduction of Algorithm course</h2>
+<h1 id="toc_1">Topological sorting</h1>
 
 <p>
-Homepage: <a href="http://www.cs.ucr.edu/~stelo/cs218fall12">http://www.cs.ucr.edu/~stelo/cs218fall12</a>
+Definition: It is an algorithm toschedule a sequence of jobs or works based on their dependencies. Usually the dependencies of each jobs show as a graph.
 </p>
 
 <p>
-Textbook: <a href="http://happily84.github.com/wiki/source/Introduction to Algorithms, Third Edition.pdf">Introduction of Algorithm</a>
+An algorithm in acyclic graph:
 </p>
+
+<pre class="brush: cpp">
+
+L ← Empty list that will contain the sorted elements
+S ← Set of all nodes with no incoming edges
+while S is non-empty do
+    remove a node n from S
+    insert n into L
+    for each node m with an edge e from n to m do
+        remove edge e from the graph
+        if m has no other incoming edges then
+            insert m into S
+if graph has edges then
+    return error (graph has at least one cycle)
+else 
+    return L (a topologically sorted order)
+
+</pre>
 
 <p>
-Reference book: 
+Another Algorithm:
 </p>
-<ol>
-<li>
-<a href="http://happily84.github.com/wiki/source/Algorithm_Design.pdf ">Algorithm Design</a> ( Black book ) Author: Kleinberg etc.
 
-<li>
-<a href="http://beust.com/algorithms.pdf">Algorithm</a> Author: Dasgupta etc.
 
-</ol>
+<pre class="brush: cpp">
 
-<h3 id="toc_1.1.1">score</h3>
+L ← Empty list that will contain the sorted nodes
+S ← Set of all nodes with no incoming edges
+for each node n in S do
+    visit(n) 
+function visit(node n)
+    if n has not been visited yet then
+        mark n as visited
+        for each node m with an edge from n to m do
+            visit(m)
+        add n to L
 
-<table>
-<tr>
-<th>
-Exam Type
-</th>
-<th>
-Day
-</th>
-</tr>
-<tr>
-<td>
-Entrance
-</td>
-<td>
-Oct.4
-</td>
-</tr>
-<tr>
-<td>
-Midterm
-</td>
-<td>
-Nov.8
-</td>
-</tr>
-<tr>
-<td>
-Final
-</td>
-<td>
-Dec.13
-</td>
-</tr>
-</table>
+</pre>
 
+<h2 id="toc_1.1">question</h2>
 <ul>
 <li>
-Homework 4%*5 = 20%
-
-<li>
-Entrance quiz = 5%
-
-<li>
-Midterm		= 40%
-
-<li>
-Final			= 45%
+I think in this Algorithm, should use BFS not DFS.
 
 </ul>
-
-<h3 id="toc_1.1.2">Slides</h3>
-<ol>
-<li>
-<a href="http://www.cs.ucr.edu/~stelo/cs218fall12/CS218Fall12-1_intro.pdf ">Intro</a>
-
-<li>
-<a href="http://www.cs.ucr.edu/~stelo/cs218fall12/CS218Fall12-2_analysis.pdf ">Algorithm Analysis</a>
-
-</ol>
-
-<h3 id="toc_1.1.3">Record</h3>
 
 <p>
-Thanks to Demon Wang :D
+wikipedia: <a href="http://en.wikipedia.org/wiki/Topological_sorting">http://en.wikipedia.org/wiki/Topological_sorting</a>
 </p>
-
-<p>
-<audio controls="controls">
-	<source src="source/CS218_09-27.MP3" type="audio/mpeg">
-</audio>
-</p>
-
-<p>
-And, you can download from here: <a href="http://happily84.github.com/wiki/source/CS218_09-27.MP3">http://happily84.github.com/wiki/source/CS218_09-27.MP3</a>
-</p>
-
-<h2 id="toc_1.2">just for myself</h2>
-
-<h3 id="toc_1.2.1">Task after class</h3>
-
-<ul>
-<li class="done0">
-Reviewing Discrete Math
-
-<li class="done0">
-Learning Python
-
-</ul>
-
-<h3 id="toc_1.2.2">Unresolve Question</h3>
-
-<ul>
-<li class="done4">
-In Python, A[3:5] means A{3,4,5} or A{2,3,4}
-
-<ul>
-<li>
-So in Python, the index i is the before cursor of element, so A[a,b} means form a to b, not including the element before index b.
-
-<li>
-In <em>Learning Python</em> , it says as follows,
-
-<ul>
-<li>
-S[1:3] fetches from offsets 1 up to, but not including, 3
-
-<li>
-S[1:] fetches from offsets 1 through the end (length)
-
-<li>
-S[:-1] fetches from offsets 0 up to, but not including, the last item
-
-</ul>
-</ul>
-</ul>
-
-<ul>
-<li class="done0">
-If the complexity of an Algorithm is O(n<sup><small>2</small></sup>), so it's also in O(n<sup><small>3</small></sup>), So why do not we use \theta to refer to the complexity.
-
-</ul>
 
 
 </article>

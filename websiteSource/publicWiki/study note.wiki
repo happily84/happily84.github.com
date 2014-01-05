@@ -1,0 +1,27 @@
+%title study note 
+
+= study note =
+
+== schedule ==
+
+# [[2012Fall_study_schedule]]
+
+== Algorithm ==
+
+# [[Algorithm_0927]]
+# [[Algorithm_1002]]
+
+== Data Mining==
+
+# [[Data_Mining_Project]]
+
+== Testing ==
+
+# [[Testing Final review]]
+
+== GPU ==
+
+# [[GPU_learning_note]]
+
+blog:datetime=2012/09/28 00:20:19:tags=
+

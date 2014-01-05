@@ -1,0 +1,42 @@
+%title Learning Python
+
+blog
+# There is a different between 'b = a' and 'b = a[:]' if a and b are both list
+    - b = a means b is a pointer which now points to a
+    - and b = a[:] means make a copy of a
+# Different betweent `list` and `tuple` is that `list` is mutable and `tuple` is inmutable
+# Different betweent `list = list + other` and `list.extend(other)` is that former method create a new list and copy the value of new list to oringinal list, but latter just modify the original list which will save many time espeacially in a large scale project.
+    - bib: http://blog.sina.com.cn/s/blog_6eee53080100n1lg.html
+# Different between `dict` and `tuple`: they are two concepts, and `dict.items()` can return a `tuple`
+
+{{{class="brush: python"
+    >>> a = {(1,2),(2,3)}
+    >>> type(a)
+    <type 'set'>
+    >>> b = (1,2)
+    >>> b
+    (1, 2)
+    >>> type(b)
+    <type 'tuple'>
+    >>> c = [1,2]
+    >>> type(c)
+    <type 'list'>
+    >>> d = {1:2,2:3}
+    >>> d
+    {1: 2, 2: 3}
+    >>> type(d)
+    <type 'dict'>
+}}}
+
+# Regular expression:
+    - `.` dot means any char
+    - `\w` means any word char
+    - `\d` means digital
+    - `\s` means whitespace: including space, tab, new line and `\S` means nowhitespace
+    - `+` means 1 or more
+    - `*` means 0 or more
+    - e.g. `\w+` means finding 1 or more word char
+
+# Different between `import module` and ` form module import *`
+    - Former is link all function and variable into current file, and we can use `module.func()` to call. Any modified of func and varible form module will take effect.
+    - Latter is copy all function and variable into current file, and we can use `func()` to call. Any modified of func and varible form module will not take effect.

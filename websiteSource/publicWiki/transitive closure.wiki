@@ -1,0 +1,8 @@
+= transitive closure =
+
+Definition: The definition in mathematics is so complicated. In my view, if xRy and yRz can induct to xRz, then we can say that there exists a transitive closure between x and z.
+
+Another example in wikipedia: For example, if X is a set of airports and x R y means "there is a direct flight from airport x to airport y", then the transitive closure of R on X is the relation R^+^: "it is possible to fly from x to y in one or more flights."
+
+Wikipedia: http://en.wikipedia.org/wiki/Transitive_closure#Graph_theory
+

@@ -1,0 +1,6 @@
+=biconnected components=
+
+# Definition: a biconnected components is a maximal biconnected subgraph.
+# Biconnected graph is a connected and nonsparable graph, means that if any vertices were be removed, the graph remains connected.
+
+

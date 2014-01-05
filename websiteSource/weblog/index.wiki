@@ -1,0 +1,9 @@
+%title index of weblog 
+
+= index of weblog =
+
+# [[how to build a weblog with github+vimwiki]]
+# [[How to use webSlide to present a web PPT]]
+
+blog:datetime= 2012/08/17 18:35:47
+

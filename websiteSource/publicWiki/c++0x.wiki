@@ -1,0 +1,63 @@
+%title
+%title Introduction of new feature of c++0x 
+
+= Introduction of new feature of c++0x =
+
+== Introduction of Lambda in c++0x: ==
+
+Lambda can be used like this,
+
+
+{{{class="brush: cpp"
+
+#include <iostream>
+
+	using  namespace std;
+
+	int main()
+	{
+		int i = 1024;
+		auto func = [=] { printf("%d\n", i); };
+		func();
+
+		return 0;
+	}
+
+}}}
+
+and in `[]` there are some options,
+
+
+{{{class="brush: cpp"
+
+    []        Capture nothing (or, a scorched earth strategy?)
+	[&]       Capture any referenced variable by reference
+	[=]       Capture any referenced variable by making a copy
+	[=, &foo] Capture any referenced variable by making a copy, but capture variable foo by reference
+	[bar]     Capture bar by making a copy; don't copy anything else
+	[this]    Capture the this pointer of the enclosing class
+
+}}}
+
+it also can involve param, like this,
+
+
+{{{class="brush: cpp"
+
+    #inlcude <iostream>
+	using namespace std;
+	int main()
+	{
+		auto func=[](int x, int y){ cout << x+y << endl;};
+		func( 2, 6);
+		return 0;
+	}
+
+}}}
+the result is 8, what a wonderful feature of c++..
+
+It will become very very useful in STL, especially in the function of for_each(iter_begin,iter_end,[]{balabala;});
+
+So that's it. The Lambda.
+
+Lastmodified time: 2012/09/19 22:59:27

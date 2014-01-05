@@ -1,0 +1,2 @@
+# About two algorithm in *Delta-Debugging*
+# Fault location PPT 22

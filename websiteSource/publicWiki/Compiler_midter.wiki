@@ -1,0 +1,28 @@
+%title Compiler Midterm 
+
+= Compiler Midterm =
+
+== summary ==
+
+# chapter 2 ( possible question )
+    - compute the dominator set and construct the dominator tree
+    - identify loops using dominator information
+    - Whether a control flow graph reducible
+    - compute the depth first numbering
+    - indentify loops using the computed information
+# chapter 3
+    - Reaching definitions
+        Definition of variable reaches a point p if there exists a path from immediately after d to p such that definition d is not killed along the path.
+    - Available expressions
+        An expression A+B is avaliable at a point if every path from the start node to the point evaluates A+B and after the last evaluation of A+B on each path
+        there is no redefinition of either A or B.
+    - Live variable analysis
+        A variable X is live at point p if there exists a X-clear path from p to a use of X; otherwise X is dead at p.
+    - Very busy expressions 
+        A expression A+B is very busy at point p if for all paths starting at p and ending at the end of the program, an evaluation of A+B appears before any
+        definition of A or B.
+    - UD Chain, which consists of a definition of a variable and all the use reachable from the definition without any other intervening definition.
+    - DU Chain, which consists a use, and all the definition of the variable that can reach that use without any other intervening definition.
+
+blog:datetime=2013/04/30 14:06:12:tags=
+

@@ -1,0 +1,36 @@
+%title How to setup a personal weblog with github and vimwiki 
+
+= How to setup a personal weblog with github and vimwiki =
+
+2012/08/12 20:28:50 begin 
+
+== 1. register a github ==
+
+# You should register your github account from http://www.github.com . 
+# Create a repo named yourname.github.com ( be careful, it MUST BE named yourname.github.com, or you cannot visit your page using yourname.github.com later.)
+# get a clone from github. revise and upload using `git pull` `git commit` `git push` or something like this. Or you can write a shell script to upload code.
+
+== 2. prepare for vimwiki ==
+
+# You should have a vim in Linux MacOS or Windows. :)
+# Download vimwiki script from http://www.vim.org/scripts/script.php?script_id=2226 
+# config your personal `vimrc`. Locate your vimwiki path to the github project directory. ( I am not recommand you also to locate your vimwiki source path to the project directory. )
+# write your own css file, and config template path in `vimrc` if you need.
+# happy your weblog.
+
+== 3. Tips cannot search from Google ==
+
+# In current version of vimwiki (version 2.0.1) , using `template_path` `template_default` `template_ext` instead `header_path` and `footer_path`.
+# [Link Description] no longer supported in version 2.0.1 of vimwiki. I don't think it is a smart decision. Now I cannot find a suitable way to reslove it.
+# DONOT upload your personal dairy to github server :).
+
+== 4. Related information ==
+
+# Introduce of vimwiki (Chinese): http://wiki.ktmud.com/tips/vim/vimwiki-guide.html
+# Writing in vimwiki and github (Chinese): http://blog.hotoo.me/use-vimwiki-for-blog.html
+# Git help: https://help.github.com/
+# Git Pages help: http://pages.github.com/
+
+
+blog:datetime=2012/08/12 18:33:36 LastModifyTime: 2012/08/12 21:46:32:tags=
+

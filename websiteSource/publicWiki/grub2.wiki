@@ -1,0 +1,14 @@
+%title about grub2 
+
+= about grub2 =
+
+grub2 can generate /boot/grub/grub.cfg from /etc/default/grub.cfg and /etc/grub.d/
+
+and We can custom another boot items from /etc/grub.d/40_custom
+
+and /etc/default/grub.cfg seems using to do more general job, like the background of grub, the resolution of grub and etc.
+
+Ralated information
+
+blog:datetime=2012/09/29 00:28:34:tags=
+

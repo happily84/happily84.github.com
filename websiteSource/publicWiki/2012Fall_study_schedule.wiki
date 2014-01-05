@@ -1,0 +1,47 @@
+%title 2012 Fall Schedule 
+
+= 2012 Fall Schedule =
+
+== About course ==
+
+# Oct.30 Algorithm HW2 due
+# Nov.1 Testing Midterm
+  - partition 1
+  - BRO/BOR
+  - w/wp
+  - control flow
+  - data flow
+# Nov.5 Data Mining Assigement
+  - title
+  - abstract
+	- problem history
+	- content in this paper
+  - introduction
+	- problem
+	- why is it hard?
+	- summary of contribution
+  - Related work
+	- citation
+  - Framework and defination
+  - Algorithm
+  - Experiments 
+  - conclusion (future work)
+# Nov.8 Algorithm Midterm
+# Nov.13 Algorithm HW3 due
+# Nov.26 Data Mining Midterm
+# Nov.27 Algorithm HW4 due
+# Nov.27 Testing HW5 due
+# Nov.28 Data Mining project presentation
+# Nov.29 Testing project due
+# Dec.06 Testing Final
+# Dec.13 Algorithm Final
+# Dec.13 Algorithm HW5 due
+
+== TODO ==
+
+[[TODO]]
+
+Ralated information
+
+blog:datetime=2012/10/20 16:35:13:tags=
+

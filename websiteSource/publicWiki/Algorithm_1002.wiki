@@ -1,0 +1,45 @@
+%title
+
+= Perparation to the Entrance Exam of Algorithm =
+
+== Discrete Math: == 
+- [X] asymptotic notation
+- [] [[basic summation formulas]]
+- [] [[sets(operations on sets, relations, functions)]]
+- [] counting (permutations, sets, combinations, binomial coefficients)
+
+== Basic Data Structures ==
+- [] array
+- [] list
+- [] queue
+- [] stack
+- [] binary search trees
+- [] balanced binary search trees
+- [] heap
+
+== Sorting and Searching ==
+- [] quicksort
+- [] mergesort
+- [] heapsort
+- [] [[radix-sort]]
+- [] binary search
+
+== Graph algorithms ==
+- [] DFS
+- [] BFS
+- [] [[connected components]]
+- [] [[biconnected components]]
+
+== Digraph algorithms ==
+- [] DFS
+- [] BFS
+- [] [[strongly connected components]]
+- [] [[transitive closure]]
+- [] [[topological sorting]]
+
+== note ==
+* what the different between array and list.
+  - List including `Linked list` and `array list`
+  - the most different between list and array is that array is fixed size, and list is dynamic
+* read chapter 10, 11, 12, 22, 23
+

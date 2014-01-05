@@ -1,0 +1,13 @@
+%title BRO/BOR 
+
+= BRO/BOR =
+
+# `BRO` means bool and relational operation adequate
+  - Noted that N_3 = N_1 and N_2 ==> N_3^t=N_1^t \times N_2^t ; N_3^f=N_1^f \times tN_2 and tN_1 \times N_2^f
+# `BOR` means bool operation adequate
+# `singular boolean expression` means each literal appears only once
+
+Ralated information
+
+blog:datetime=2012/10/30 10:45:19:tags=
+

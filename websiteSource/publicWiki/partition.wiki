@@ -1,0 +1,19 @@
+%title Partition 
+
+= Partition =
+
+# In equivalence partitioning, `E` means all expected inputs value class, and `U` means all unexpected inputs value class.
+# Partitioning step
+  - idendify input domain
+  - equivalent partitioning 
+  - combine equivalent
+      # Unidimensional partition
+      # Multidimensional partition
+  - Idendify infeasible equivalent classes
+      # `_` means input not used, `NA` means input not allowed.
+
+
+Ralated information
+
+blog:datetime=2012/10/30 00:23:28:tags=
+

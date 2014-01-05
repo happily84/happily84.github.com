@@ -1,0 +1,5 @@
+A new day, very tired. 
+
+TodoList:
+- [] read primer c++
+- [ ] 

@@ -1,0 +1,38 @@
+%toc
+%title title 
+
+= title =
+== subtitle ==
+# a
+# b
+# c
+
+- d
+- e
+- f
+
+= content =
+
+pub wiki for test
+
+test 2
+
+test 3
+
+test 4
+
+
+
+{{{class="brush: cpp"
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	cout << " hello world " << endl;
+
+}
+
+}}}
+
+blog:datetime=2012/08/11 23:07:33:tags=

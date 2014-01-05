@@ -20,7 +20,7 @@
 <script type="text/javascript">
   SyntaxHighlighter.all();
   </script> 
-<title>2012 Fall Schedule  - Happily84.Wiki</title>
+<title>Compiler Midterm  - Happily84.Wiki</title>
 </head>
 <body>
 <div id="wrapper">
@@ -40,131 +40,64 @@
 
 
 
-<h1 id="toc_1">2012 Fall Schedule</h1>
+<h1 id="toc_1">Compiler Midterm</h1>
 
-<h2 id="toc_1.1">About course</h2>
+<h2 id="toc_1.1">summary</h2>
 
 <ol>
 <li>
-Oct.30 Algorithm HW2 due
-
-<li>
-Nov.1 Testing Midterm
+chapter 2 ( possible question )
 
 <ul>
 <li>
-partition 1
+compute the dominator set and construct the dominator tree
 
 <li>
-BRO/BOR
+identify loops using dominator information
 
 <li>
-w/wp
+Whether a control flow graph reducible
 
 <li>
-control flow
+compute the depth first numbering
 
 <li>
-data flow
+indentify loops using the computed information
 
 </ul>
 <li>
-Nov.5 Data Mining Assigement
+chapter 3
 
 <ul>
 <li>
-title
+Reaching definitions
+        Definition of variable reaches a point p if there exists a path from immediately after d to p such that definition d is not killed along the path.
 
 <li>
-abstract
-
-<ul>
-<li>
-problem history
+Available expressions
+        An expression A+B is avaliable at a point if every path from the start node to the point evaluates A+B and after the last evaluation of A+B on each path
+        there is no redefinition of either A or B.
 
 <li>
-content in this paper
+Live variable analysis
+        A variable X is live at point p if there exists a X-clear path from p to a use of X; otherwise X is dead at p.
+
+<li>
+Very busy expressions 
+        A expression A+B is very busy at point p if for all paths starting at p and ending at the end of the program, an evaluation of A+B appears before any
+        definition of A or B.
+
+<li>
+UD Chain, which consists of a definition of a variable and all the use reachable from the definition without any other intervening definition.
+
+<li>
+DU Chain, which consists a use, and all the definition of the variable that can reach that use without any other intervening definition.
 
 </ul>
-<li>
-introduction
-
-<ul>
-<li>
-problem
-
-<li>
-why is it hard?
-
-<li>
-summary of contribution
-
-</ul>
-<li>
-Related work
-
-<ul>
-<li>
-citation
-
-</ul>
-<li>
-Framework and defination
-
-<li>
-Algorithm
-
-<li>
-Experiments 
-
-<li>
-conclusion (future work)
-
-</ul>
-<li>
-Nov.8 Algorithm Midterm
-
-<li>
-Nov.13 Algorithm HW3 due
-
-<li>
-Nov.26 Data Mining Midterm
-
-<li>
-Nov.27 Algorithm HW4 due
-
-<li>
-Nov.27 Testing HW5 due
-
-<li>
-Nov.28 Data Mining project presentation
-
-<li>
-Nov.29 Testing project due
-
-<li>
-Dec.06 Testing Final
-
-<li>
-Dec.13 Algorithm Final
-
-<li>
-Dec.13 Algorithm HW5 due
-
 </ol>
 
-<h2 id="toc_1.2">TODO</h2>
-
 <p>
-<a href="TODO.html">TODO</a>
-</p>
-
-<p>
-Ralated information
-</p>
-
-<p>
-blog:datetime=2012/10/20 16:35:13:tags=
+blog:datetime=2013/04/30 14:06:12:tags=
 </p>
 
 

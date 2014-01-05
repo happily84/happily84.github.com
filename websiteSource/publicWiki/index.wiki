@@ -1,0 +1,15 @@
+= %toc =
+= Welcome to my vimwiki =
+- [[出国准备物品checklist]]
+- [[vim]]
+- [[task before go aboard]] 
+- [[UCR 课]]
+- [[markdown]]
+- [[vimwiki]]
+- [[c++0x]]
+- [[something should do everyday]]
+- [[study note]]
+- [[ubuntu]]
+- [[TODO]]
+- [[learning Python]]
+- [[Thinking in java]]

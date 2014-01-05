@@ -1,0 +1,4 @@
+resolve a problem of goagent in Ubuntu:
+
+# goagent or proxysharp has a conflict with `unblock youku`
+# goagent is different from wallproxy. I mush reupload a new GAE program to use it. ( appid = happily84ubuntu )

@@ -1,0 +1,15 @@
+%title Thinking in Java 
+
+= Thinking in Java =
+
+== 2013/12/17 13:49:39 == 
+
+# `enum`
+- In `java`, `enum` value can be printed as the name of the enum type, instead of just order value in `c++`
+
+# main function
+- every class can include a main function, using for `Unit Testing`
+
+
+blog:datetime=2013/12/17 13:48:55:tags=Java
+

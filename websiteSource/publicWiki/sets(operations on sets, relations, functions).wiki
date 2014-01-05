@@ -1,0 +1,20 @@
+= Set( operation, relations, functions) =
+
+== Relations ==
+
+# Definition: AXB={(a,b): a is a member of A && b is a member of B} and ARB ={(a,b: a is a member of A && b is a member of B && aRb}.
+
+== Operation ==
+
+# No Definition
+# Basic Operation includes:
+  - Union
+  - Intersection
+  - Complements
+  - Cartesian product
+
+== Functions ==
+
+# Definition: if there exists a Relation AXB in A and B, and for each a in A, there exists and only exists one element in B. This relations can be called a function.
+
+

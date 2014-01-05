@@ -1,0 +1,10 @@
+%title Hadoop in action 
+
+= Hadoop in action =
+
+`MapReduce` framework donot allow user to use arbitrary class, such as interger, string, and so forth. It only allows user to use the class which can serilaze the data, so in `MapReduce` framwork, we use `IntWritable`, `BooleanWritable` and so forth to define key/value.
+
+Ralated information
+
+blog:datetime=2013/02/27 11:53:49:tags=
+
