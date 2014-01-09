@@ -1,0 +1,23 @@
+%title Hyracks Note 
+
+%toc
+
+= Hyracks Note =
+
+== What is Hyracks ==
+
+In my opinion, Hyracks is a paralle platform to serve as a target for compiling higher-level declarative data-processing languages. The motivation of Hyracks is that some companies use `Hadoop` as their paralle platform, but `Hadoop` has some limitations likes it requires fairly sophisticated skills to translate end-user's problem into jobs in `Hadoop`. So many companies develop their own high-level language under `Hadoop`. However, if we build a new paralle platform from the start, it would be more efficent. That is why we develop `Hyracks`.
+
+== Why Hyracks ==
+
+# Hyracks already includes a build-in collection of operators that can be use to assemble data processing jobs without writing processing logic akin to Map and Reduce code.
+# Hyracks has a rich API in order to enable better planning and runtime scheduling for jobs.
+# Hadoop compatibility.
+# Performance better than Hadoop.
+# Good fault recovery.
+# Open-source.
+
+= Reference =
+
+# [[http://www.ics.uci.edu/~rares/pub/icde11-borkar.pdf|Hyracks: A Flexible and Extensible Foundation for Data-Intensive Computing]]
+==== Crated Time: 2014/01/09 10:08:18. Last Modified Time: 2014/01/09 10:09:01 ==== 
