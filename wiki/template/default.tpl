@@ -5,7 +5,7 @@
 <link type="image/x-icon" rel="icon" href="favicon.ico" />
 <link type="image/x-icon" rel="shortcut icon" href="favicon.ico" />
 <!--[if IE]><script type="text/javascript" src="%root_path%js/html5.js"></script><![endif]-->
-<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
 <title>%title% - Zhaosheng's Personal Wiki</title>
 </head>
 <body>
@@ -30,6 +30,7 @@
     Copyleft © 2010, Driven by <a href="http://code.google.com/p/vimwiki/">Vimwiki</a>, Theme by Zhaosheng.    </p>
 </div>
 </div>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="../css/vimwiki.js" type="text/javascript"></script>
 </body>
 </html>

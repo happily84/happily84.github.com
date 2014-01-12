@@ -11,8 +11,12 @@ content1
 == Study Note ==
 [[asterix]] | [[Hyracks]]
 
+== Uncategory ==
+
+[[AboutMe]]
+
 == ChangeLog of webside ==
 
 content2
 
-==== Crated Time: 2014/01/09 10:08:18. Last Modified Time: 2014/01/09 10:09:01 ==== 
+<h6 class="timestamp"> Created Time: 2014/01/09 10:08:18. Last Modified Time: 2014/01/09 10:09:01 </h6>

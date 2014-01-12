@@ -20,4 +20,4 @@ In my opinion, Hyracks is a paralle platform to serve as a target for compiling 
 = Reference =
 
 # [[http://www.ics.uci.edu/~rares/pub/icde11-borkar.pdf|Hyracks: A Flexible and Extensible Foundation for Data-Intensive Computing]]
-==== Crated Time: 2014/01/09 10:08:18. Last Modified Time: 2014/01/09 10:09:01 ==== 
+<h6 class="timestamp"> Crated Time: 2014/01/09 10:08:18. Last Modified Time: 2014/01/09 10:09:01 </h6>
