@@ -144,19 +144,20 @@ $(document).ready(function() {
         kwiki.getCSS('http://alexgorbatchev.com/pub/sh/current/styles/shThemeRDark.css');
         $.getScript('http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js', function() {
             $.getScript('http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js', function(){
-                SyntaxHighlighter.config.strings.expandSource = '+ 展开源码';
-                SyntaxHighlighter.config.strings.viewSource = '新窗口查看源码';
-                SyntaxHighlighter.config.strings.copyToClipboard = '复制到剪贴板';
-                SyntaxHighlighter.config.strings.copyToClipboardConfirmation = '已经复制源码到剪切板';
-                SyntaxHighlighter.config.strings.print = '打印';
+                SyntaxHighlighter.config.strings.expandSource = '+ expand code';
+                SyntaxHighlighter.config.strings.viewSource = 'view sourcecode in new Tab';
+                SyntaxHighlighter.config.strings.copyToClipboard = 'copy to clipboard';
+                SyntaxHighlighter.config.strings.copyToClipboardConfirmation = 'already copied to clipboard';
+                SyntaxHighlighter.config.strings.print = 'Print';
                 SyntaxHighlighter.config.strings.help = '';
-                SyntaxHighlighter.config.strings.alert = '语法高亮器&lt;br /&gt;';
-                SyntaxHighlighter.config.strings.noBrush = '找不到下列语言的渲染器: ';
+                SyntaxHighlighter.config.strings.alert = 'syntax highlight &lt;br /&gt;';
+                SyntaxHighlighter.config.strings.noBrush = 'cannot found brush for: ';
                 SyntaxHighlighter.autoloader(
                   'js jscript javascript  http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js',
                   'php http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPhp.js',
                   'css CSS Css http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCss.js',
                   'c cpp http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCpp.js',
+                  'Java java JAVA http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js',
                   'Bash bash http://alexgorbatchev.com/pub/sh/current/scripts/shBrushBash.js'
                 );
                  
@@ -173,7 +174,4 @@ _gaq.push(['_setAccount', 'UA-1080811-17']);
 _gaq.push(['_trackPageview']);
 
 $.getScript('http://www.google-analytics.com/ga.js');
-
-
-
 

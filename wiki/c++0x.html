@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="image/x-icon" rel="icon" href="favicon.ico" />
+<link type="image/x-icon" rel="shortcut icon" href="favicon.ico" />
+<!--[if IE]><script type="text/javascript" src="js/html5.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<title>Introduction of new feature of c++0x  - Zhaosheng's Personal Wiki</title>
+</head>
+<body>
+<div id="all">
+<div id="header">
+    <ul id="top-nav">
+        <li class="first"><a href="../index.html" title="Home">Home</a></li>
+        <li><a href="../blog/index.html" title="Blog">Blog</a></li>
+        <li class="actived"><a href="index.html" title="Wiki">Wiki</a></li>
+        <li><a href="https://twitter.com/happily84" title="Twitter">Twitter</a></li>
+        <li><a href="http://github.com/happily84" title="Project">Project</a></li>
+        <li class="last"><a href="../resume/resume.html" title="About Me">AboutMe</a></li>
+    </ul>
+</div>
+<div id="main">
+
+<div class="toc">
+<ul>
+<li><a href="#toc_0.1">Introduction of Lambda in c++0x</a>
+</ul>
+<li><a href="#toc_1">Reference</a>
+</ul>
+</div>
+
+<p>
+<h1 class="justcenter"> Introduction of new feature of c++0x </h1>
+</p>
+
+<h2 id="toc_0.1">Introduction of Lambda in c++0x</h2>
+
+<p>
+Lambda can be used like this,
+</p>
+
+
+<pre class="brush: cpp">
+
+#include &lt;iostream&gt;
+
+	using  namespace std;
+
+	int main()
+	{
+		int i = 1024;
+		auto func = [=] { printf("%d\n", i); };
+		func();
+
+		return 0;
+	}
+
+</pre>
+
+<p>
+and in <code>[]</code> there are some options,
+</p>
+
+
+<pre class="brush: cpp">
+
+    []        Capture nothing (or, a scorched earth strategy?)
+	[&amp;]       Capture any referenced variable by reference
+	[=]       Capture any referenced variable by making a copy
+	[=, &amp;foo] Capture any referenced variable by making a copy, but capture variable foo by reference
+	[bar]     Capture bar by making a copy; don't copy anything else
+	[this]    Capture the this pointer of the enclosing class
+
+</pre>
+
+<p>
+it also can involve param, like this,
+</p>
+
+
+<pre class="brush: cpp">
+
+    #inlcude &lt;iostream&gt;
+	using namespace std;
+	int main()
+	{
+		auto func=[](int x, int y){ cout &lt;&lt; x+y &lt;&lt; endl;};
+		func( 2, 6);
+		return 0;
+	}
+
+</pre>
+<p>
+the result is 8, what a wonderful feature of c++..
+</p>
+
+<p>
+It will become very very useful in STL, especially in the function of for_each(iter_begin,iter_end,[]{balabala;});
+</p>
+
+<p>
+So that's it. The Lambda.
+</p>
+
+<h1 id="toc_1">Reference</h1>
+
+<p>
+<h6 class="timestamp"> Created Time: 2014/01/12 02:38:37.      Last Modified Time: 2014/01/12 02:39:06. </h6>
+</p>
+
+
+</div>
+<div id="footer">
+<p>
+    <a href="index.html" id="back-home">&lsaquo; 首页</a>
+    Copyleft © 2010, Driven by <a href="http://code.google.com/p/vimwiki/">Vimwiki</a>, Theme by Zhaosheng.    </p>
+</div>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="../css/vimwiki.js" type="text/javascript"></script>
+</body>
+</html>

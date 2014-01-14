@@ -9,7 +9,7 @@
 content1
 
 == Study Note ==
-[[asterix]] | [[Hyracks]]
+[[asterix]] | [[Hyracks]] | [[c++0x]]
 
 == Uncategory ==
 
@@ -17,6 +17,6 @@ content1
 
 == ChangeLog of webside ==
 
-content2
+- 2014/01/12 02:33:37 adding `Table of Content` and `Disqus` to website, starting to write `AboutMe` but have done yet.
 
 <h6 class="timestamp"> Created Time: 2014/01/09 10:08:18. Last Modified Time: 2014/01/09 10:09:01 </h6>
