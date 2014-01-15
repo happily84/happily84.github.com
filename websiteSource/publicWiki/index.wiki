@@ -13,10 +13,11 @@ content1
 
 == Uncategory ==
 
-[[AboutMe]]
+[[AboutMe]] | [[Personal Bookmarks]]
 
 == ChangeLog of webside ==
 
+- 2014/01/14 10:33:52 preparing to manage chrome bookmarks, and list in personal wiki.
 - 2014/01/12 02:33:37 adding `Table of Content` and `Disqus` to website, starting to write `AboutMe` but have done yet.
 
 <h6 class="timestamp"> Created Time: 2014/01/09 10:08:18. Last Modified Time: 2014/01/09 10:09:01 </h6>

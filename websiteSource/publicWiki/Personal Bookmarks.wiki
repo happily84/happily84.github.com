@@ -1,0 +1,60 @@
+%title personal chrome bookmarks 
+%toc
+
+<h1 class="justcenter"> personal chrome bookmarks </h1>
+
+== Hunting Jobs ==
+
+* [[http://courses.csail.mit.edu/iap/interview/materials.php|Hacking a Google Interview]]
+* [[http://www.1point3acres.com/bbs/forum-84-1.html|编程算法 - 找工求职 - 一亩三分地论坛]]
+* [[https://www.remonk.com/|Evaluate Your Own Resume / CV]]
+* [[https://www.interviewstreet.com/recruit2/|Interviewstreet]]
+* [[https://ucr-csm.symplicity.com/students/index.php?s=home|UCR-SCOTLink]]
+* [[http://leetcode.com/|leetcode]]
+* [[http://www.programmerinterview.com/|Programmer interview]]
+* [[http://git.onebitbug.me/?p=latex-templates.git;a=blob;f=resume/example.pdf;h=2158298c7a1d8f2d2255a58ea3b7396c3120fb93;hb=HEAD|example resume in latex - USTC guy]]
+
+== Open Course ==
+
+* [[http://www.udacity.com/|udacity]]
+* [[https://www.coursera.org/courses|coursearea]]
+* [[http://www.youtube.com/watch?v=rpXxsp1vSEs&list=UUJhehVBcZFRMfNPHVV_-2TA&index=1&feature=plcp|Lecture 16 - Analyzing Big Data with Twitter: Spark by Matei Zaharia]]
+* [[http://collabedit.com/3vrbr|need to check]]
+* [[http://courses.csail.mit.edu/6.851/spring12/lectures/|Standford Advanced Data Structure]]
+* [[http://alex.smola.org/teaching/cmu2013-10-701/intro.html|cmu check]]
+* [[http://www.m-e-e-t.com/courses/19262/show_lecture|Meet open course]]
+* [[http://www.youku.com/playlist_show/id_17207975_ascending_1_mode_pic.html|Introduction to algrithm - Stanford]]
+
+== English Learning ==
+
+* [[http://iask.sina.com.cn/u/1710131755/ish?retcode=0|刘琦's 爱问资源]]
+* [[http://www.towords.com/|拓词]]
+
+== Technology ==
+
+=== Weblog ===
+
+* [[http://www.w3school.com.cn/|w3school]]
+* [[http://www.zrblog.net/|VPS Introduction]]
+* [[http://www.codecademy.com/programming-intro/1#!/exercise/0|A new way to learn programming]]
+* [[http://www.iplaysoft.com/web-develop-chm.html|PHP、jQuery、CSS、HTML等Web开发参考手册CHM文档中文版下载 - 异次元软件世界]]
+* [[http://coolshell.cn/articles/4990.html|程序员修炼之路-coolshell]]
+ 
+=== Article ===
+
+* [[http://wordpress.org.cn/thread-42729-1-1.html|我的wordpress建站过程]]
+* [[http://www.zhujun.org/web/google-doodle-guitar-source-code/|Google gitar doodle]]
+* [[http://www.jackchen.cn/blog/?p=4741|55 wordpress Themes]]
+* [[http://www.xfdown.com/soft/23898.html|蹭无线网]]
+* [[http://linuxtoy.org/archives/deck-js-modern-html-prentations.html|Deck JS: HTML5 幻灯片 — LinuxTO]]
+* [[http://www.bentutu.com/|ubuntu weblog - bentutu]]
+* [[http://onebitbug.me/| weblog - a USTC guy]]
+* [[http://www.oschina.net/|oschina]]
+* [[http://www.linuxidc.com/|LinuxIDC]]
+* [[http://panda0411.com/|weblog - panda]]
+* [[http://coolshell.cn/|Coolshell]]
+*
+
+
+<h6 class="timestamp"> Created Time: 2014/01/14 10:35:14.      Last Modified Time:  . </h6>
+
