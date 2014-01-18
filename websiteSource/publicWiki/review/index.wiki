@@ -8,6 +8,8 @@
 
 [[gdb]] | [[c++0x]] | [[git]] | [[Maven]] | [[bash script]] | [[html5]] | [[css3]] | [[hadoop]] | [[CUDA]] | [[Gerrit]]
 
+[[vim]] | [[vimwiki]]
+
 
 = Reference =
 

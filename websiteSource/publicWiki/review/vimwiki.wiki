@@ -5,4 +5,3 @@ U can revise ~/.vim/autoload/vimwiki/default.tpl add it to the header
 
 U can see http://www.ruchee.com/code/linux/vim/syntaxhighlighter.html for more detail
 
-Using `:set paste` to discard autoindent and smartindent

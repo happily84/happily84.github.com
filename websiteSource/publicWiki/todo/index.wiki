@@ -4,6 +4,10 @@
 
 <h1 class="justcenter"> TODO List </h1>
 
+= Daily Todo List =
+
+- [[2014-01-17]]
+
 = Hunting Job =
 
 - [.] Hunting Job
@@ -16,10 +20,10 @@
         - [ ] Google code interview
     - [o] Resume
         - [X] Design resume template
-        - [X] [[../../resume/zhaosheng_resume.pdf|Write a general resume]]
+        - [X] Write a general resume
         - [ ] add some specific experience and skill for special company 
-        - [ ] [[project_description|Present project description]]
-        - [ ] [[review/index|Review skill in resume]]
+        - [ ] [[../project_description|Present project description]]
+        - [ ] [[../review/index|Review skill in resume]]
 
 <h1> Color Sample </h1>
 

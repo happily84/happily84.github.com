@@ -1,0 +1,76 @@
+%title Chapter1 Question4 
+
+<h1 class="justcenter"> Chapter1 Question4 </h1>
+
+= Question =
+
+Write a method to replace all space in a string with `%20`.
+
+= Analysis =
+
+== Naive algorithm ==
+
+The naive algorithm for this problem is scan the array `spaceCount` times, in each time, we will find a new space, and increase array length by 2, move all the element behind the space 2 more position, use `%20` to override current space.
+
+The time complexity of this algorithm is `O(spaceCount*lengh)`, in the worst case, it will be `O(n^^2)`
+
+== Improved ==
+
+To make an improvement to the naive algorithm, we can scan the char array and count the number and space, increase the array length to `spaceCount*2`. Then move the element from rear to head.
+
+The time complexity will be `O(2*lengh)`. It is a `O(n)` algorithm.
+
+= SourceCode =
+
+{{{class="brush: java"
+
+package chapter1;
+
+public class question4 {
+    public static char[] replaceSpace ( char[] original, int len ) {
+        int spaceCount = 0;
+        for ( int i = 0; i < len; ++i) {
+            if ( ' ' == original[i] )
+                spaceCount++;
+        }
+        int index = len + spaceCount *2;
+        char[] result = new char[len + spaceCount * 2 + 1];
+        result[index] = '\0';
+        -- index;
+        for ( int i = len - 1; i >=0; --i) {
+            if ( ' ' == original[i]) {
+                result[index] = '0';
+                result[index-1] = '2';
+                result[index-2] = '%';
+                index -= 3;
+            }else {
+                result[index] = original[i];
+                -- index;
+            }
+        }
+        
+        return result;
+    }
+    public static void main( String[] args) {
+        char[] str= "test for replaceSpace.".toCharArray();
+        char[] result = replaceSpace(str,22);
+        System.out.println(result);
+    }
+}
+
+}}}
+
+= Problem = 
+
+# Every array must be initialization before use.
+# Java char[] do not use `\0`, it uses length field to check whether the array over bound.
+# Make equation clearly is a good habit, like `int index = len + spaceCount * 3 - spaceCount;`
+# `char[]` cannot accept `string` type object, have to use `string.toCharArray()` to make a convertion.
+
+= Reference =
+
+# [[https://github.com/gaylemcd/ctci/blob/master/java/Chapter%201/Question1_4/Question.java|solution from book]]
+# [[http://www.java-forums.org/new-java/68823-array-java-0-a.html|About  in Java]]
+
+<h6 class="timestamp"> Created Time: 2014/01/17 16:13:58.      Last Modified Time:  . </h6>
+

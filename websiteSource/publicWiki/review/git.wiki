@@ -1,0 +1,90 @@
+%title Git 
+
+%toc
+
+<h1 class="justcenter"> Git </h1>
+
+= What is Git =
+
+== What is Version Control ==
+
+Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later.
+
+=== Local Version Control Systems ===
+
+Many people’s version-control method of choice is to copy files into another directory (perhaps a time-stamped directory, if they’re cleve). This approach is very common because it is so simple, but it is also incredibly error prone. It is easy to forget which directory you’re in and accidentally write to the wrong file or copy over files you don’t mean to.
+
+To deal with this issue, programmers long ago developed local VCSs that had a simple database that kept all the changes to files under revision control.
+
+The drawback of `Local Version Control Systems` is obvious, if you want to collaborate with other developer, it is not easy to share the project with others. Furthermore, if local disks is damaged, the project data will lost.
+
+=== Centralized Version Control Systems === 
+
+To deal with this problem, Centralized Version Control Systems (CVCSs) were developed. These systems, such as CVS, Subversion, and Perforce, have a single server that contains all the versioned files, and a number of clients that check out files from that central place.
+
+Unfortunally, CVS also has some downsides. If the server goes down for an hour, then during that hour nobody can collaborate at all or save versioned changes to anything they’re working on. Or if the hard disk of centeral database is damaged, you also will lost everything, as LVS.
+
+=== Distributed Version Control Systems ===
+
+This is where Distributed Version Control Systems (DVCSs) step in. In a DVCS (such as Git, Mercurial, Bazaar or Darcs), clients don’t just check out the latest snapshot of the files: they fully mirror the repository. Thus if any server dies, and these systems were collaborating via it, any of the client repositories can be copied back up to the server to restore it. Every checkout is really a full backup of all the data.
+
+=== Summary ===
+
+The mainly different between `CVC` and `DVC` is `CVC` only perserve the current version of sourcecode, while `DVC` preserves all versions.
+
+== Git ==
+
+`Git` is a `Distributed Version Control Systems` which is original designed to manage Linux Kernal Sourcecode. It’s incredibly fast, it’s very efficient with large projects, and it has an incredible branching system for non-linear development 
+
+= How to use =
+
+== Installing ==
+
+=== Linux ===
+
+==== Ubuntu ====
+
+{{{class="brush: bash"
+sudo apt-get install git
+}}}
+
+==== Fedora ====
+
+{{{class="brush: bash"
+yum install git-core
+}}}
+
+=== MacOS ===
+
+Download from
+{{{
+http://code.google.com/p/git-osx-installer
+}}}
+
+== Configuration ==
+
+=== Your identity ===
+
+{{{class="brush: bash"
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+}}}
+
+=== Your Editor ===
+
+{{{class="brush: bash"
+git config --global core.editor vim
+}}}
+
+=== Your Diff Tool ===
+
+{{{class="brush: bash"
+git config --global merge.tool gitdiff
+}}}
+
+= Reference =
+
+# [[http://git-scm.com/doc|Pro Git]]
+
+<h6 class="timestamp"> Created Time: 2014/01/17 23:35:22.      Last Modified Time:  . </h6>
+

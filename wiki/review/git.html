@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="image/x-icon" rel="icon" href="favicon.ico" />
+<link type="image/x-icon" rel="shortcut icon" href="favicon.ico" />
+<!--[if IE]><script type="text/javascript" src="../js/html5.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<title>Git  - Zhaosheng's Personal Wiki</title>
+</head>
+<body>
+<div id="all">
+<div id="header">
+    <ul id="top-nav">
+        <li class="first"><a href="../../index.html" title="Home">Home</a></li>
+        <li><a href="../../blog/index.html" title="Blog">Blog</a></li>
+        <li class="actived"><a href="../index.html" title="Wiki">Wiki</a></li>
+        <li><a href="https://twitter.com/happily84" title="Twitter">Twitter</a></li>
+        <li><a href="http://github.com/happily84" title="Project">Project</a></li>
+        <li class="last"><a href="../../resume/resume.html" title="About Me">AboutMe</a></li>
+    </ul>
+</div>
+<div id="main">
+
+
+<div class="toc">
+<ul>
+<li><a href="#toc_1">What is Git</a>
+<ul>
+<li><a href="#toc_1.1">What is Version Control</a>
+<ul>
+<li><a href="#toc_1.1.1">Local Version Control Systems</a>
+<li><a href="#toc_1.1.2">Centralized Version Control Systems</a>
+<li><a href="#toc_1.1.3">Distributed Version Control Systems</a>
+<li><a href="#toc_1.1.4">Summary</a>
+</ul>
+<li><a href="#toc_1.2">Git</a>
+</ul>
+<li><a href="#toc_2">How to use</a>
+<ul>
+<li><a href="#toc_2.1">Installing</a>
+<ul>
+<li><a href="#toc_2.1.1">Linux</a>
+<ul>
+<li><a href="#toc_2.1.1.1">Ubuntu</a>
+<li><a href="#toc_2.1.1.2">Fedora</a>
+</ul>
+<li><a href="#toc_2.1.2">MacOS</a>
+</ul>
+<li><a href="#toc_2.2">Configuration</a>
+<ul>
+<li><a href="#toc_2.2.1">Your identity</a>
+<li><a href="#toc_2.2.2">Your Editor</a>
+<li><a href="#toc_2.2.3">Your Diff Tool</a>
+</ul>
+</ul>
+<li><a href="#toc_3">Reference</a>
+</ul>
+</div>
+
+<p>
+<h1 class="justcenter"> Git </h1>
+</p>
+
+<h1 id="toc_1">What is Git</h1>
+
+<h2 id="toc_1.1">What is Version Control</h2>
+
+<p>
+Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later.
+</p>
+
+<h3 id="toc_1.1.1">Local Version Control Systems</h3>
+
+<p>
+Many people’s version-control method of choice is to copy files into another directory (perhaps a time-stamped directory, if they’re cleve). This approach is very common because it is so simple, but it is also incredibly error prone. It is easy to forget which directory you’re in and accidentally write to the wrong file or copy over files you don’t mean to.
+</p>
+
+<p>
+To deal with this issue, programmers long ago developed local VCSs that had a simple database that kept all the changes to files under revision control.
+</p>
+
+<p>
+The drawback of <code>Local Version Control Systems</code> is obvious, if you want to collaborate with other developer, it is not easy to share the project with others. Furthermore, if local disks is damaged, the project data will lost.
+</p>
+
+<h3 id="toc_1.1.2">Centralized Version Control Systems</h3>
+
+<p>
+To deal with this problem, Centralized Version Control Systems (CVCSs) were developed. These systems, such as CVS, Subversion, and Perforce, have a single server that contains all the versioned files, and a number of clients that check out files from that central place.
+</p>
+
+<p>
+Unfortunally, CVS also has some downsides. If the server goes down for an hour, then during that hour nobody can collaborate at all or save versioned changes to anything they’re working on. Or if the hard disk of centeral database is damaged, you also will lost everything, as LVS.
+</p>
+
+<h3 id="toc_1.1.3">Distributed Version Control Systems</h3>
+
+<p>
+This is where Distributed Version Control Systems (DVCSs) step in. In a DVCS (such as Git, Mercurial, Bazaar or Darcs), clients don’t just check out the latest snapshot of the files: they fully mirror the repository. Thus if any server dies, and these systems were collaborating via it, any of the client repositories can be copied back up to the server to restore it. Every checkout is really a full backup of all the data.
+</p>
+
+<h3 id="toc_1.1.4">Summary</h3>
+
+<p>
+The mainly different between <code>CVC</code> and <code>DVC</code> is <code>CVC</code> only perserve the current version of sourcecode, while <code>DVC</code> preserves all versions.
+</p>
+
+<h2 id="toc_1.2">Git</h2>
+
+<p>
+<code>Git</code> is a <code>Distributed Version Control Systems</code> which is original designed to manage Linux Kernal Sourcecode. It’s incredibly fast, it’s very efficient with large projects, and it has an incredible branching system for non-linear development 
+</p>
+
+<h1 id="toc_2">How to use</h1>
+
+<h2 id="toc_2.1">Installing</h2>
+
+<h3 id="toc_2.1.1">Linux</h3>
+
+<h4 id="toc_2.1.1.1">Ubuntu</h4>
+
+<pre class="brush: bash">
+sudo apt-get install git
+</pre>
+
+<h4 id="toc_2.1.1.2">Fedora</h4>
+
+<pre class="brush: bash">
+yum install git-core
+</pre>
+
+<h3 id="toc_2.1.2">MacOS</h3>
+
+<p>
+Download from
+</p>
+<pre>
+http://code.google.com/p/git-osx-installer
+</pre>
+
+<h2 id="toc_2.2">Configuration</h2>
+
+<h3 id="toc_2.2.1">Your identity</h3>
+
+<pre class="brush: bash">
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+</pre>
+
+<h3 id="toc_2.2.2">Your Editor</h3>
+
+<pre class="brush: bash">
+git config --global core.editor vim
+</pre>
+
+<h3 id="toc_2.2.3">Your Diff Tool</h3>
+
+<pre class="brush: bash">
+git config --global merge.tool gitdiff
+</pre>
+
+<h1 id="toc_3">Reference</h1>
+
+<ol>
+<li>
+<a href="http://git-scm.com/doc">Pro Git</a>
+
+</ol>
+
+<p>
+<h6 class="timestamp"> Created Time: 2014/01/17 23:35:22.      Last Modified Time:  . </h6>
+</p>
+
+
+</div>
+<div id="footer">
+<p>
+    <a href="index.html" id="back-home">&lsaquo; 首页</a>
+    Copyleft © 2010, Driven by <a href="http://code.google.com/p/vimwiki/">Vimwiki</a>, Theme by Zhaosheng.    </p>
+</div>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="../../css/vimwiki.js" type="text/javascript"></script>
+</body>
+</html>

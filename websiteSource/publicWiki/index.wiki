@@ -13,7 +13,7 @@ content1
 
 == Uncategory ==
 
-[[AboutMe]] | [[Personal Bookmarks]] | [[TODO_LIST|TODO LIST]]
+[[AboutMe]] | [[Personal Bookmarks]] | [[todo/index|TODO LIST]] | [[sourcecode/cc150|cc150]]
 
 == Quick Link ==
 

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="image/x-icon" rel="icon" href="favicon.ico" />
+<link type="image/x-icon" rel="shortcut icon" href="favicon.ico" />
+<!--[if IE]><script type="text/javascript" src="../js/html5.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<title>Chapter1 Question4  - Zhaosheng's Personal Wiki</title>
+</head>
+<body>
+<div id="all">
+<div id="header">
+    <ul id="top-nav">
+        <li class="first"><a href="../../index.html" title="Home">Home</a></li>
+        <li><a href="../../blog/index.html" title="Blog">Blog</a></li>
+        <li class="actived"><a href="../index.html" title="Wiki">Wiki</a></li>
+        <li><a href="https://twitter.com/happily84" title="Twitter">Twitter</a></li>
+        <li><a href="http://github.com/happily84" title="Project">Project</a></li>
+        <li class="last"><a href="../../resume/resume.html" title="About Me">AboutMe</a></li>
+    </ul>
+</div>
+<div id="main">
+
+
+<p>
+<h1 class="justcenter"> Chapter1 Question4 </h1>
+</p>
+
+<h1 id="toc_1">Question</h1>
+
+<p>
+Write a method to replace all space in a string with <code>%20</code>.
+</p>
+
+<h1 id="toc_2">Analysis</h1>
+
+<h2 id="toc_2.1">Naive algorithm</h2>
+
+<p>
+The naive algorithm for this problem is scan the array <code>spaceCount</code> times, in each time, we will find a new space, and increase array length by 2, move all the element behind the space 2 more position, use <code>%20</code> to override current space.
+</p>
+
+<p>
+The time complexity of this algorithm is <code>O(spaceCount*lengh)</code>, in the worst case, it will be <code>O(n^^2)</code>
+</p>
+
+<h2 id="toc_2.2">Improved</h2>
+
+<p>
+To make an improvement to the naive algorithm, we can scan the char array and count the number and space, increase the array length to <code>spaceCount*2</code>. Then move the element from rear to head.
+</p>
+
+<p>
+The time complexity will be <code>O(2*lengh)</code>. It is a <code>O(n)</code> algorithm.
+</p>
+
+<h1 id="toc_3">SourceCode</h1>
+
+<pre class="brush: java">
+
+package chapter1;
+
+public class question4 {
+    public static char[] replaceSpace ( char[] original, int len ) {
+        int spaceCount = 0;
+        for ( int i = 0; i &lt; len; ++i) {
+            if ( ' ' == original[i] )
+                spaceCount++;
+        }
+        int index = len + spaceCount *2;
+        char[] result = new char[len + spaceCount * 2 + 1];
+        result[index] = '\0';
+        -- index;
+        for ( int i = len - 1; i &gt;=0; --i) {
+            if ( ' ' == original[i]) {
+                result[index] = '0';
+                result[index-1] = '2';
+                result[index-2] = '%';
+                index -= 3;
+            }else {
+                result[index] = original[i];
+                -- index;
+            }
+        }
+        
+        return result;
+    }
+    public static void main( String[] args) {
+        char[] str= "test for replaceSpace.".toCharArray();
+        char[] result = replaceSpace(str,22);
+        System.out.println(result);
+    }
+}
+
+</pre>
+
+<h1 id="toc_4">Problem</h1>
+
+<ol>
+<li>
+Every array must be initialization before use.
+
+<li>
+Java char[] do not use <code>\0</code>, it uses length field to check whether the array over bound.
+
+<li>
+Make equation clearly is a good habit, like <code>int index = len + spaceCount * 3 - spaceCount;</code>
+
+<li>
+<code>char[]</code> cannot accept <code>string</code> type object, have to use <code>string.toCharArray()</code> to make a convertion.
+
+</ol>
+
+<h1 id="toc_5">Reference</h1>
+
+<ol>
+<li>
+<a href="https://github.com/gaylemcd/ctci/blob/master/java/Chapter%201/Question1_4/Question.java">solution from book</a>
+
+<li>
+<a href="http://www.java-forums.org/new-java/68823-array-java-0-a.html">About  in Java</a>
+
+</ol>
+
+<p>
+<h6 class="timestamp"> Created Time: 2014/01/17 16:13:58.      Last Modified Time:  . </h6>
+</p>
+
+
+</div>
+<div id="footer">
+<p>
+    <a href="index.html" id="back-home">&lsaquo; 首页</a>
+    Copyleft © 2010, Driven by <a href="http://code.google.com/p/vimwiki/">Vimwiki</a>, Theme by Zhaosheng.    </p>
+</div>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="../../css/vimwiki.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+%title AsterixDB 
+
+<h1 class="justcenter"> AsterixDB </h1>
+
+= What is Asterix =
+
+`AsterixDB` is a parelle, highly scalable semi-structured information management system with the ability to ingest, store, index, query, analyze and publish very large quantities of semistuctured data. `Asterix` is well-suited to handle use cases ranging all the way from rigid, relation-like data collections, whose types are well understood and invariant, to flexible and more complex data, where  little is known a priori and the instances in data collections are highly variant and self-describing
+
+== Three layer of Asterix ==
+
+The bottommost layer of `Asterix` is [[Hyracks]].
+
+The middle layer of `Asterix` is called `Algebricks` and `Hadoop/MR compatibility`.
+
+The topmost layer of `Asterix` is `Asterix data management system` and `other high level language compiler`.
+
+- [ ] TODO: add a pic here, maybe use html5.
+
+=== Asterix data management system ===
+
+The `Asterix data management system` contains a full flexiable data model named `ADM` and a query language `AQL` for describing, querying and analyzing data.
+
+=== Algebricks ===
+
+`Algebricks` is a model-agnostic and algebraic "virtual machin" for parallel query processing and optimization. Algebricks is the target for AQL query compilation, but it can also be the target for other declarative data languages. It is more than a compiler and optimizer of `AQL`.
+
+`Algebricks` contains six part,
+
+# A set of logical operators
+# A set of physical operators
+# A rewrite rule framework
+# A set of generally applicable rewrite rules
+# A metadata provider API that exposes metadata information to `Algebricks`
+# A mapping of physical operators to the runtime operators in `Hyracks`
+
+= Why Asterix =
+
+# `Asterix Data Model(ADM)` is well-suited to handling use cases ranging from rigid data collection to flexible data.
+# Geo-spatial query.
+# Fuzzy query.
+# Data seed. Automatic ingest data from daily RSS or Twitter.
+
+= Reference =
+
+# [[http://asterix.ics.uci.edu/pub/vldb2012demo.pdf|ASTERIX: An Open Source System for "Big Dat" Management and Analysis (Demo)]]
+# [[http://asterix.ics.uci.edu/pub/IIWeb2012.pdf|ASTERIX: Scalable Warehouse-Style Web Data Integration]]
+# [[http://asterix.ics.uci.edu/pub/ASTERIX-DPD-2011.pdf|ASTERIX: towards a scalable, semistructured data platform for evolving-world models]]
+
+<h6 class="timestamp"> Created Time: 2014/01/17 22:31:58.      Last Modified Time:  . </h6>
+

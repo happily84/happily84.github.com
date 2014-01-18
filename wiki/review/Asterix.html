@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="image/x-icon" rel="icon" href="favicon.ico" />
+<link type="image/x-icon" rel="shortcut icon" href="favicon.ico" />
+<!--[if IE]><script type="text/javascript" src="../js/html5.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<title>AsterixDB  - Zhaosheng's Personal Wiki</title>
+</head>
+<body>
+<div id="all">
+<div id="header">
+    <ul id="top-nav">
+        <li class="first"><a href="../../index.html" title="Home">Home</a></li>
+        <li><a href="../../blog/index.html" title="Blog">Blog</a></li>
+        <li class="actived"><a href="../index.html" title="Wiki">Wiki</a></li>
+        <li><a href="https://twitter.com/happily84" title="Twitter">Twitter</a></li>
+        <li><a href="http://github.com/happily84" title="Project">Project</a></li>
+        <li class="last"><a href="../../resume/resume.html" title="About Me">AboutMe</a></li>
+    </ul>
+</div>
+<div id="main">
+
+
+<p>
+<h1 class="justcenter"> AsterixDB </h1>
+</p>
+
+<h1 id="toc_1">What is Asterix</h1>
+
+<p>
+<code>AsterixDB</code> is a parelle, highly scalable semi-structured information management system with the ability to ingest, store, index, query, analyze and publish very large quantities of semistuctured data. <code>Asterix</code> is well-suited to handle use cases ranging all the way from rigid, relation-like data collections, whose types are well understood and invariant, to flexible and more complex data, where  little is known a priori and the instances in data collections are highly variant and self-describing
+</p>
+
+<h2 id="toc_1.1">Three layer of Asterix</h2>
+
+<p>
+The bottommost layer of <code>Asterix</code> is <a href="Hyracks.html">Hyracks</a>.
+</p>
+
+<p>
+The middle layer of <code>Asterix</code> is called <code>Algebricks</code> and <code>Hadoop/MR compatibility</code>.
+</p>
+
+<p>
+The topmost layer of <code>Asterix</code> is <code>Asterix data management system</code> and <code>other high level language compiler</code>.
+</p>
+
+<ul>
+<li class="done0">
+<span class="todo">TODO:</span> add a pic here, maybe use html5.
+
+</ul>
+
+<h3 id="toc_1.1.1">Asterix data management system</h3>
+
+<p>
+The <code>Asterix data management system</code> contains a full flexiable data model named <code>ADM</code> and a query language <code>AQL</code> for describing, querying and analyzing data.
+</p>
+
+<h3 id="toc_1.1.2">Algebricks</h3>
+
+<p>
+<code>Algebricks</code> is a model-agnostic and algebraic "virtual machin" for parallel query processing and optimization. Algebricks is the target for AQL query compilation, but it can also be the target for other declarative data languages. It is more than a compiler and optimizer of <code>AQL</code>.
+</p>
+
+<p>
+<code>Algebricks</code> contains six part,
+</p>
+
+<ol>
+<li>
+A set of logical operators
+
+<li>
+A set of physical operators
+
+<li>
+A rewrite rule framework
+
+<li>
+A set of generally applicable rewrite rules
+
+<li>
+A metadata provider API that exposes metadata information to <code>Algebricks</code>
+
+<li>
+A mapping of physical operators to the runtime operators in <code>Hyracks</code>
+
+</ol>
+
+<h1 id="toc_2">Why Asterix</h1>
+
+<ol>
+<li>
+<code>Asterix Data Model(ADM)</code> is well-suited to handling use cases ranging from rigid data collection to flexible data.
+
+<li>
+Geo-spatial query.
+
+<li>
+Fuzzy query.
+
+<li>
+Data seed. Automatic ingest data from daily RSS or Twitter.
+
+</ol>
+
+<h1 id="toc_3">Reference</h1>
+
+<ol>
+<li>
+<a href="http://asterix.ics.uci.edu/pub/vldb2012demo.pdf">ASTERIX: An Open Source System for "Big Dat" Management and Analysis (Demo)</a>
+
+<li>
+<a href="http://asterix.ics.uci.edu/pub/IIWeb2012.pdf">ASTERIX: Scalable Warehouse-Style Web Data Integration</a>
+
+<li>
+<a href="http://asterix.ics.uci.edu/pub/ASTERIX-DPD-2011.pdf">ASTERIX: towards a scalable, semistructured data platform for evolving-world models</a>
+
+</ol>
+
+<p>
+<h6 class="timestamp"> Created Time: 2014/01/17 22:31:58.      Last Modified Time:  . </h6>
+</p>
+
+
+</div>
+<div id="footer">
+<p>
+    <a href="index.html" id="back-home">&lsaquo; 首页</a>
+    Copyleft © 2010, Driven by <a href="http://code.google.com/p/vimwiki/">Vimwiki</a>, Theme by Zhaosheng.    </p>
+</div>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="../../css/vimwiki.js" type="text/javascript"></script>
+</body>
+</html>
