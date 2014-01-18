@@ -1,0 +1,39 @@
+%title TODO List 
+
+%toc
+
+<h1 class="justcenter"> TODO List </h1>
+
+= Hunting Job =
+
+- [.] Hunting Job
+    - [ ] Thinking in JAVA
+    - [ ] Terminology translation from Chinese to English
+    - [ ] Coding
+        - [ ] Cracking the Coding interview
+        - [ ] Careercup
+        - [ ] Leetcode
+        - [ ] Google code interview
+    - [o] Resume
+        - [X] Design resume template
+        - [X] Write a general resume
+        - [ ] add some specific experience and skill for special company 
+        - [ ] Present project description ===> [[Project Description]]
+        - [ ] Review skill in resume ====> [[review/index|Skill Review]]
+
+
+<h1> Color Sample </h1>
+
+- [.] TODO             ( 1%-33%)
+    - [o] TODO_1       (34%-66%)
+        - [ ] TODO_1_1
+        - [X] TODO_1_2
+        - [X] TODO_1_3
+    - [O] TODO_2       (67%-99%)
+        - [X] TODO_2_1
+        - [X] TODO_2_2
+        - [ ] TODO_2_3 (   0% )
+        - [X] TODO_2_4 ( 100% )
+
+<h6 class="timestamp"> Created Time: 2014/01/17 11:23:21.      Last Modified Time:  . </h6>
+

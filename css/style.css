@@ -105,6 +105,21 @@ li {
     list-style-position: inside;
 
 }
+li.done0 {
+    color:#ff0000;
+}
+li.done1 {
+    color:#ff8000;
+}
+li.done2 {
+    color:#ffff00;
+}
+li.done3 {
+    color:#ffffcc;
+}
+li.done4 {
+    color:#00ff00;
+}
 ol, ul {
     margin-left: 1em;
     padding-left: 0.5em;
