@@ -2,9 +2,12 @@
 
 <h1 class="justcenter"> Skills review </h1>
 
+= Programming Language =
+
+[[c++]] | [[java]] | [[python]] | [[javascript]]
+
 [[gdb]] | [[c++0x]] | [[git]] | [[Maven]] | [[bash script]] | [[html5]] | [[css3]] | [[hadoop]] | [[CUDA]] | [[Gerrit]]
 
-[[c++]] | [[java]] | [[python|python]] | [[javascript]]
 
 = Reference =
 

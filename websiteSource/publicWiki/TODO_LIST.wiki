@@ -16,11 +16,10 @@
         - [ ] Google code interview
     - [o] Resume
         - [X] Design resume template
-        - [X] Write a general resume
+        - [X] [[../../resume/zhaosheng_resume.pdf|Write a general resume]]
         - [ ] add some specific experience and skill for special company 
-        - [ ] Present project description ===> [[Project Description]]
-        - [ ] Review skill in resume ====> [[review/index|Skill Review]]
-
+        - [ ] [[project_description|Present project description]]
+        - [ ] [[review/index|Review skill in resume]]
 
 <h1> Color Sample </h1>
 

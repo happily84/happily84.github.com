@@ -9,11 +9,15 @@
 content1
 
 == Study Note ==
-[[asterix]] | [[Hyracks]] | [[c++0x]]
+[[review/Asterix|AsterixDB]] | [[review/Hyracks|Hyracks]] | [[review/c++0x|c++0x]]
 
 == Uncategory ==
 
 [[AboutMe]] | [[Personal Bookmarks]] | [[TODO_LIST|TODO LIST]]
+
+== Quick Link ==
+
+[[review/index|resume review]]
 
 == ChangeLog of webside ==
 
