@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="image/x-icon" rel="icon" href="favicon.ico" />
+<link type="image/x-icon" rel="shortcut icon" href="favicon.ico" />
+<!--[if IE]><script type="text/javascript" src="../js/html5.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<title>Chapter1 Question7  - Zhaosheng's Personal Wiki</title>
+</head>
+<body>
+<div id="all">
+<div id="header">
+    <ul id="top-nav">
+        <li class="first"><a href="../../index.html" title="Home">Home</a></li>
+        <li><a href="../../blog/index.html" title="Blog">Blog</a></li>
+        <li class="actived"><a href="../index.html" title="Wiki">Wiki</a></li>
+        <li><a href="https://twitter.com/happily84" title="Twitter">Twitter</a></li>
+        <li><a href="http://github.com/happily84" title="Project">Project</a></li>
+        <li class="last"><a href="../../resume/resume.html" title="About Me">AboutMe</a></li>
+    </ul>
+</div>
+<div id="main">
+
+
+<p>
+<h1 class="justcenter"> Chapter1 Question7 </h1>
+</p>
+
+<h1 id="toc_1">Problem</h1>
+
+<p>
+Write an algorithm such that if an element in an N*N matrix is 0, its entire row and column are set to 0.
+</p>
+
+<h1 id="toc_2">Analysis</h1>
+
+<p>
+Use another 2*N boolean Array to record the row and column of the matrix. For initialization, all elements set to <code>false</code>, traverse the original matrix, if the element is zero, set <code>[0][i]</code> and <code>[0][j]</code> to <code>true</code>.
+</p>
+
+<p>
+Time complexity is <code>O(N^^2)</code>. Space complexity is <code>O(2N)</code>.
+</p>
+
+<h1 id="toc_3">SourceCode</h1>
+
+
+<pre class="brush: java">
+
+package chapter1;
+import java.util.Arrays;
+
+public class Question7 {
+    static void setZeroMatrix( int[][] matrix, int n) {
+        boolean[][] checker = new boolean[2][n];
+        for ( int i = 0; i &lt; n; ++i) {
+            checker[0][i] = false;
+            checker[1][i] = false;
+        }
+        for ( int i = 0; i &lt; n; ++i) {
+            for ( int j = 0; j &lt; n; ++j) {
+                if(matrix[i][j] == 0 ) {
+                    checker[0][i] = true;
+                    checker[1][j] = true;
+                }
+            }
+        }
+        for ( int i = 0; i &lt; n; ++i) {
+            for ( int j = 0; j &lt; n; ++j) {
+                if( checker[0][i] == true || checker[1][j] == true ) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+    }
+    public static void main( String[] args ) {
+        int[][] matrix = {
+                {0,1,1,1},
+                {1,1,0,1},
+                {1,1,1,1},
+                {1,0,1,1}
+        };
+        System.out.println(Arrays.deepToString(matrix));
+        setZeroMatrix(matrix,4);
+        System.out.println(Arrays.deepToString(matrix));
+    }
+}
+
+</pre>
+
+<h1 id="toc_4">Formal Solution</h1>
+
+
+<pre class="brush: java">
+package Question1_7;
+
+import CtCILibrary.AssortedMethods;
+
+public class Question {
+        public static void nullifyRow(int[][] matrix, int row) {
+                for (int j = 0; j &lt; matrix[0].length; j++) {
+                        matrix[row][j] = 0;
+                }                
+        }
+
+        public static void nullifyColumn(int[][] matrix, int col) {
+                for (int i = 0; i &lt; matrix.length; i++) {
+                        matrix[i][col] = 0;
+                }                
+        }                
+        
+        public static void setZeros2(int[][] matrix) {
+                boolean rowHasZero = false;
+                boolean colHasZero = false;                
+                
+                // Check if first row has a zero
+                for (int j = 0; j &lt; matrix[0].length; j++) {
+                        if (matrix[0][j] == 0) {
+                                rowHasZero = true;
+                                break;
+                        }
+                }                
+                
+                // Check if first column has a zero
+                for (int i = 0; i &lt; matrix.length; i++) {
+                        if (matrix[i][0] == 0) {
+                                colHasZero = true;
+                                break;
+                        }
+                }                
+                
+                // Check for zeros in the rest of the array
+                for (int i = 1; i &lt; matrix.length; i++) {
+                        for (int j = 1; j &lt; matrix[0].length;j++) {
+                                if (matrix[i][j] == 0) {
+                                        matrix[i][0] = 0;
+                                        matrix[0][j] = 0;
+                                 }
+                        }
+                }                
+                
+                // Nullify rows based on values in first column
+                for (int i = 1; i &lt; matrix.length; i++) {
+                        if (matrix[i][0] == 0) {
+                                nullifyRow(matrix, i);
+                        }
+                }                
+                
+                // Nullify columns based on values in first row
+                for (int j = 1; j &lt; matrix[0].length; j++) {
+                        if (matrix[0][j] == 0) {
+                                nullifyColumn(matrix, j);
+                        }
+                }        
+                
+                // Nullify first row
+                if (rowHasZero) {
+                        nullifyRow(matrix, 0);
+                }
+                
+                // Nullify first column
+                if (colHasZero) {
+                        nullifyColumn(matrix, 0);
+                }
+        }        
+        
+        public static void setZeros(int[][] matrix) {
+                boolean[] row = new boolean[matrix.length];        
+                boolean[] column = new boolean[matrix[0].length];
+
+                // Store the row and column index with value 0
+                for (int i = 0; i &lt; matrix.length; i++) {
+                        for (int j = 0; j &lt; matrix[0].length;j++) {
+                                if (matrix[i][j] == 0) {
+                                        row[i] = true; 
+                                        column[j] = true;
+                                 }
+                        }
+                }
+                
+                // Nullify rows
+                for (int i = 0; i &lt; row.length; i++) {
+                        if (row[i]) {
+                                nullifyRow(matrix, i);
+                        }
+                }
+                
+                // Nullify columns
+                for (int j = 0; j &lt; column.length; j++) {
+                        if (column[j]) {
+                                nullifyColumn(matrix, j);
+                        }
+                }
+        }        
+        
+        public static boolean matricesAreEqual(int[][] m1, int[][] m2) {
+                if (m1.length != m2.length || m1[0].length != m2[0].length) {
+                        return false;
+                }
+                
+                for (int k = 0; k &lt; m1.length; k++) {
+                        for (int j = 0; j &lt; m1[0].length; j++) {
+                                if (m1[k][j] != m2[k][j]) {
+                                        return false;
+                                }
+                        }
+                }        
+                return true;
+        }
+        
+        public static int[][] cloneMatrix(int[][] matrix) {
+                int[][] c = new int[matrix.length][matrix[0].length];
+                for (int i = 0; i &lt; matrix.length; i++) {
+                        for (int j = 0; j &lt; matrix[0].length; j++) {
+                                c[i][j] = matrix[i][j];
+                        }
+                }
+                return c;
+        }
+        
+        public static void main(String[] args) {
+                int nrows = 10;
+                int ncols = 15;
+                int[][] matrix1 = AssortedMethods.randomMatrix(nrows, ncols, 0, 100);                
+                int[][] matrix2 = cloneMatrix(matrix1);
+
+                AssortedMethods.printMatrix(matrix1);
+                
+                setZeros(matrix1);
+                setZeros2(matrix2);
+                
+                System.out.println();
+                
+                AssortedMethods.printMatrix(matrix1);
+                System.out.println();
+                AssortedMethods.printMatrix(matrix2);
+                
+                if (matricesAreEqual(matrix1, matrix2)) {
+                        System.out.println("Equal");
+                } else {
+                        System.out.println("Not Equal");
+                }
+        }
+}
+</pre>
+
+<h1 id="toc_5">Problem</h1>
+
+<ol>
+<li>
+Use <code>Arrays.deepToString()</code> to print a 2D Matrix. Even for a N-D Matrix.
+
+<li>
+Stop use <code>func(int[][] matrix, int N)</code>, using <code>func(int[]][] matrix)</code> and use <code>matrix.length()</code> to get the length of matrix.
+
+</ol>
+
+
+<h1 id="toc_6">Reference</h1>
+
+<ol>
+<li>
+<a href="https://github.com/gaylemcd/ctci/blob/master/java/Chapter%201/Question1_7/Question.java">Formal Solution</a>
+
+<li>
+<a href="http://www.tutorialspoint.com/java/util/arrays_deeptostring.htm">Array.deepToString()</a>
+
+</ol>
+
+<p>
+<h6 class="timestamp"> Created Time: 2014/01/21 19:50:00.      Last Modified Time:  . </h6>
+</p>
+
+
+</div>
+<div id="footer">
+<p>
+    <a href="index.html" id="back-home">&lsaquo; 首页</a>
+    Copyleft © 2010, Driven by <a href="http://code.google.com/p/vimwiki/">Vimwiki</a>, Theme by Zhaosheng.    </p>
+</div>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="../../css/vimwiki.js" type="text/javascript"></script>
+</body>
+</html>

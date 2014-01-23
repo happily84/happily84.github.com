@@ -1,0 +1,17 @@
+%title Chapter2 Question1 
+
+<h1 class="justcenter"> Chapter2 Question1 </h1>
+
+= Problem = 
+
+Write code to remove duplicates from an unsorted linked list.
+
+`FOLLOW UP`
+
+How would you solve this problem if a temporary buffer is not allowed?
+
+
+= Reference =
+
+<h6 class="timestamp"> Created Time: 2014/01/22 18:13:21.      Last Modified Time:  . </h6>
+

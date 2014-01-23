@@ -1,0 +1,16 @@
+%title 2014-01-18 Todo List
+
+<h1 class="justcenter"> 2014-01-18 Todo List </h1>
+
+- [X] finish cc150 chapter 1
+    - [X] report of 1.5
+    - [X] 1.6
+    - [X] 1.7
+    - [X] 1.8
+- [ ] review `gdb`
+    - [ ] finish `gdb` wiki
+- [X] send email to professor
+- [ ] start final project
+- [ ] continue write `git` wiki
+
+<h6 class="timestamp"> Created Time: 2014/01/18 13:25:04.      Last Modified Time: 2014/01/18 13:25:10 . </h6>

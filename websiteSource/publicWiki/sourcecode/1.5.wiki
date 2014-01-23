@@ -8,6 +8,18 @@ Implement a method to perform basic string compression using the counts of repea
 
 = Analysis =
 
+== My Algorithm ==
+
+Declare a varible named `compressedCount` to record the number of real compressed charecter. The raw thought of this algorithm is if the length of a certain charecter repeat only one time, after compression, the length will increace. For example, charecter `a` in `abbbc` will be `a1` after compressed. So the `compressedCount` of `a` will be `-1`. And the `compressedCount` of `b` will be 1. So after we run the count function throughout the string, the sum of `compressedCount` will become the actually compressed number. ( *Here has a problem. I only consider the condition that single charecter repeats under 10 times, if not, the count will become larger than 1-digit. However, it will not effect the result*). Then check `compressedCount`, if greater than `0`, return the compressed string.
+
+Time complexity is `O(2*n)` will be `O(n)`.
+
+Noted: Use `StringBuffer` or `StringBuilder` instead of `String` in `JAVA` to avoid more time assignment.
+
+== Formal Algorithm ==
+
+Do not use `while`, just use `for`. It is more clear than my algorithm. 
+
 = SourceCode =
 
 {{{class="brush: java"
@@ -92,8 +104,17 @@ public class question5 {
 
 }}}
 
+= Problem =
+
+# Different between `String`, `StringBuffer` and `StringBuilder` in `Java`
+    - `String` is immutable whereas `StringBuffer` and `StringBuilder` is mutable.
+    - `StringBuilder` is more effecient than `StringBuffer` due to the absence of `synchronization`.
+
 
 = Reference =
 
-<h6 class="timestamp"> Created Time: 2014/01/17 17:04:46.      Last Modified Time:  . </h6>
+# [[https://github.com/gaylemcd/ctci/blob/master/java/Chapter%201/Question1_5/Question.java|Formal Solution]]
+# [[http://www.techtamasha.com/difference-between-string-and-stringbufferstringbuilder-in-java/28|Different between String and StringBuilder/StringBuffer in Java]]
+
+<h6 class="timestamp"> Created Time: 2014/01/17 17:04:46.      Last Modified Time: 2014/01/18 13:54:49 . </h6>
 

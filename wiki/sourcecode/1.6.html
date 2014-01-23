@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="image/x-icon" rel="icon" href="favicon.ico" />
+<link type="image/x-icon" rel="shortcut icon" href="favicon.ico" />
+<!--[if IE]><script type="text/javascript" src="../js/html5.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<title>Chapter 1 Question 6  - Zhaosheng's Personal Wiki</title>
+</head>
+<body>
+<div id="all">
+<div id="header">
+    <ul id="top-nav">
+        <li class="first"><a href="../../index.html" title="Home">Home</a></li>
+        <li><a href="../../blog/index.html" title="Blog">Blog</a></li>
+        <li class="actived"><a href="../index.html" title="Wiki">Wiki</a></li>
+        <li><a href="https://twitter.com/happily84" title="Twitter">Twitter</a></li>
+        <li><a href="http://github.com/happily84" title="Project">Project</a></li>
+        <li class="last"><a href="../../resume/resume.html" title="About Me">AboutMe</a></li>
+    </ul>
+</div>
+<div id="main">
+
+
+<p>
+<h1 class="justcenter"> Chapter 1 Question 6 </h1>
+</p>
+
+<h1 id="toc_1">Question</h1>
+
+<p>
+Given an image represented by an N*N matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place.
+</p>
+
+<h1 id="toc_2">Analysis</h1>
+
+<p>
+Because of each pixel is 4 bytes, so we can use a N*N <code>integer</code> Matrix to present the image. After transformation, element <code>i,j</code> in N*N Matrix will become <code>N-j-1,N-i-1</code> in the new Matrix. 
+</p>
+
+<h2 id="toc_2.1">Naive algorithm</h2>
+
+<p>
+So the naive algorithm is declare a new N*N Matrix and copy origial element from <code>i,j</code> to <code>N-j-1,N-i-1</code>.
+</p>
+
+<p>
+Time complexity is <code>O(N^^2)</code>. and space complexity is <code>O(N^^2)</code>.
+</p>
+
+<h2 id="toc_2.2">Improved algorithm</h2>
+
+<p>
+Actually, we can do the tranfer on the original matrix. With the obserivation of N*N matrix, we found out that if we swap the four elements from four direction, it will just take one space to finish the job.
+</p>
+
+<p>
+Time complexity is <code>O(N^^2)</code>, and space complexity is <code>O(1)</code>.
+</p>
+
+<h1 id="toc_3">SourceCode</h1>
+
+<pre class="brush: java">
+package chapter1;
+
+public class Question6 {
+    public static void print(int[][] matrix, int n ) {
+        for ( int i = 0; i &lt; n; ++i) {
+            for ( int j = 0; j &lt; n; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.print('\n');
+        }
+    }
+    public static int[][] rotateMatrix ( int[][] matrix, int N ) {
+        for( int k = 0; k &lt; N/2; ++k ) {
+            for ( int w = k; w &lt; N - k - 1; w++ ) {
+                int tmp = matrix[k][w];
+                matrix[k][w] = matrix[N-w-1][k];
+                matrix[N-w-1][k] = matrix[N-k-1][N-w-1];
+                matrix[N-k-1][N-w-1] = matrix[w][N-k-1];
+                matrix[w][N-k-1] = tmp;
+            }
+        }
+        return matrix;
+    }
+    public static void main( String[] args ) {
+        int [][] Matrix = {
+                {0,1,2,3,4,5},
+                {0,1,2,3,4,5},
+                {0,1,2,3,4,5},
+                {0,1,2,3,4,5},
+                {0,1,2,3,4,5},
+                {0,1,2,3,4,5}
+        };
+        
+        print(Matrix,5);
+        System.out.println("otehr");
+        print(rotateMatrix(Matrix,6),6);
+    }
+}
+
+</pre>
+
+<h1 id="toc_4">Formal Solution</h1>
+
+
+<pre class="brush: java">
+package Question1_6;
+
+import CtCILibrary.*;
+
+public class Question {
+
+        public static void rotate(int[][] matrix, int n) {
+                for (int layer = 0; layer &lt; n / 2; ++layer) {
+                        int first = layer;
+                        int last = n - 1 - layer;
+                        for(int i = first; i &lt; last; ++i) {
+                                int offset = i - first;
+                                int top = matrix[first][i]; // save top
+
+                                // left -&gt; top
+                                matrix[first][i] = matrix[last-offset][first];                         
+
+                                // bottom -&gt; left
+                                matrix[last-offset][first] = matrix[last][last - offset]; 
+
+                                // right -&gt; bottom
+                                matrix[last][last - offset] = matrix[i][last]; 
+
+                                // top -&gt; right
+                                matrix[i][last] = top; // right &lt;- saved top
+                        }
+                }
+        }
+        
+        public static void main(String[] args) {
+                int[][] matrix = AssortedMethods.randomMatrix(10, 10, 0, 9);
+                AssortedMethods.printMatrix(matrix);
+                rotate(matrix, 10);
+                System.out.println();
+                AssortedMethods.printMatrix(matrix);
+        }
+
+}
+</pre>
+
+
+<h1 id="toc_5">Problem</h1>
+
+<ol>
+<li>
+The key to get correct index of matrix is distance from current point to the concern point.
+
+<li>
+Do not forget bound check
+
+<li>
+Noted the name of variable and comment. Formal solution is excellent. Need to study.
+
+</ol>
+
+<h1 id="toc_6">Reference</h1>
+
+<ol>
+<li>
+<a href="https://github.com/gaylemcd/ctci/blob/master/java/Chapter%201/Question1_6/Question.java">Formal Solution</a>
+
+</ol>
+
+<p>
+<h6 class="timestamp"> Created Time: 2014/01/18 13:56:00.      Last Modified Time:  . </h6>
+</p>
+
+
+</div>
+<div id="footer">
+<p>
+    <a href="index.html" id="back-home">&lsaquo; 首页</a>
+    Copyleft © 2010, Driven by <a href="http://code.google.com/p/vimwiki/">Vimwiki</a>, Theme by Zhaosheng.    </p>
+</div>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="../../css/vimwiki.js" type="text/javascript"></script>
+</body>
+</html>

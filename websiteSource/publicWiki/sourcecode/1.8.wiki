@@ -1,0 +1,10 @@
+%title Chapter1 Question8 
+
+<h1 class="justcenter"> Chapter1 Question8 </h1>
+
+Too simple. Lazy to answer. Plus `String` by itself and call the `subString` function.
+
+= Reference =
+
+<h6 class="timestamp"> Created Time: 2014/01/21 20:12:01.      Last Modified Time:  . </h6>
+

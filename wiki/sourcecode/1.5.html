@@ -35,6 +35,26 @@ Implement a method to perform basic string compression using the counts of repea
 
 <h1 id="toc_2">Analysis</h1>
 
+<h2 id="toc_2.1">My Algorithm</h2>
+
+<p>
+Declare a varible named <code>compressedCount</code> to record the number of real compressed charecter. The raw thought of this algorithm is if the length of a certain charecter repeat only one time, after compression, the length will increace. For example, charecter <code>a</code> in <code>abbbc</code> will be <code>a1</code> after compressed. So the <code>compressedCount</code> of <code>a</code> will be <code>-1</code>. And the <code>compressedCount</code> of <code>b</code> will be 1. So after we run the count function throughout the string, the sum of <code>compressedCount</code> will become the actually compressed number. ( <strong>Here has a problem. I only consider the condition that single charecter repeats under 10 times, if not, the count will become larger than 1-digit. However, it will not effect the result</strong>). Then check <code>compressedCount</code>, if greater than <code>0</code>, return the compressed string.
+</p>
+
+<p>
+Time complexity is <code>O(2*n)</code> will be <code>O(n)</code>.
+</p>
+
+<p>
+Noted: Use <code>StringBuffer</code> or <code>StringBuilder</code> instead of <code>String</code> in <code>JAVA</code> to avoid more time assignment.
+</p>
+
+<h2 id="toc_2.2">Formal Algorithm</h2>
+
+<p>
+Do not use <code>while</code>, just use <code>for</code>. It is more clear than my algorithm. 
+</p>
+
 <h1 id="toc_3">SourceCode</h1>
 
 <pre class="brush: java">
@@ -119,11 +139,36 @@ public class question5 {
 
 </pre>
 
+<h1 id="toc_4">Problem</h1>
 
-<h1 id="toc_4">Reference</h1>
+<ol>
+<li>
+Different between <code>String</code>, <code>StringBuffer</code> and <code>StringBuilder</code> in <code>Java</code>
+
+<ul>
+<li>
+<code>String</code> is immutable whereas <code>StringBuffer</code> and <code>StringBuilder</code> is mutable.
+
+<li>
+<code>StringBuilder</code> is more effecient than <code>StringBuffer</code> due to the absence of <code>synchronization</code>.
+
+</ul>
+</ol>
+
+
+<h1 id="toc_5">Reference</h1>
+
+<ol>
+<li>
+<a href="https://github.com/gaylemcd/ctci/blob/master/java/Chapter%201/Question1_5/Question.java">Formal Solution</a>
+
+<li>
+<a href="http://www.techtamasha.com/difference-between-string-and-stringbufferstringbuilder-in-java/28">Different between String and StringBuilder/StringBuffer in Java</a>
+
+</ol>
 
 <p>
-<h6 class="timestamp"> Created Time: 2014/01/17 17:04:46.      Last Modified Time:  . </h6>
+<h6 class="timestamp"> Created Time: 2014/01/17 17:04:46.      Last Modified Time: 2014/01/18 13:54:49 . </h6>
 </p>
 
 

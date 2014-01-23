@@ -1,0 +1,125 @@
+%title Chapter 1 Question 6 
+
+<h1 class="justcenter"> Chapter 1 Question 6 </h1>
+
+= Question =
+
+Given an image represented by an N*N matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place.
+
+= Analysis =
+
+Because of each pixel is 4 bytes, so we can use a N*N `integer` Matrix to present the image. After transformation, element `i,j` in N*N Matrix will become `N-j-1,N-i-1` in the new Matrix. 
+
+== Naive algorithm ==
+
+So the naive algorithm is declare a new N*N Matrix and copy origial element from `i,j` to `N-j-1,N-i-1`.
+
+Time complexity is `O(N^^2)`. and space complexity is `O(N^^2)`.
+
+== Improved algorithm ==
+
+Actually, we can do the tranfer on the original matrix. With the obserivation of N*N matrix, we found out that if we swap the four elements from four direction, it will just take one space to finish the job.
+
+Time complexity is `O(N^^2)`, and space complexity is `O(1)`.
+
+= SourceCode =
+
+{{{class="brush: java"
+package chapter1;
+
+public class Question6 {
+    public static void print(int[][] matrix, int n ) {
+        for ( int i = 0; i < n; ++i) {
+            for ( int j = 0; j < n; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.print('\n');
+        }
+    }
+    public static int[][] rotateMatrix ( int[][] matrix, int N ) {
+        for( int k = 0; k < N/2; ++k ) {
+            for ( int w = k; w < N - k - 1; w++ ) {
+                int tmp = matrix[k][w];
+                matrix[k][w] = matrix[N-w-1][k];
+                matrix[N-w-1][k] = matrix[N-k-1][N-w-1];
+                matrix[N-k-1][N-w-1] = matrix[w][N-k-1];
+                matrix[w][N-k-1] = tmp;
+            }
+        }
+        return matrix;
+    }
+    public static void main( String[] args ) {
+        int [][] Matrix = {
+                {0,1,2,3,4,5},
+                {0,1,2,3,4,5},
+                {0,1,2,3,4,5},
+                {0,1,2,3,4,5},
+                {0,1,2,3,4,5},
+                {0,1,2,3,4,5}
+        };
+        
+        print(Matrix,5);
+        System.out.println("otehr");
+        print(rotateMatrix(Matrix,6),6);
+    }
+}
+
+}}}
+
+= Formal Solution =
+
+
+{{{class="brush: java"
+package Question1_6;
+
+import CtCILibrary.*;
+
+public class Question {
+
+        public static void rotate(int[][] matrix, int n) {
+                for (int layer = 0; layer < n / 2; ++layer) {
+                        int first = layer;
+                        int last = n - 1 - layer;
+                        for(int i = first; i < last; ++i) {
+                                int offset = i - first;
+                                int top = matrix[first][i]; // save top
+
+                                // left -> top
+                                matrix[first][i] = matrix[last-offset][first];                         
+
+                                // bottom -> left
+                                matrix[last-offset][first] = matrix[last][last - offset]; 
+
+                                // right -> bottom
+                                matrix[last][last - offset] = matrix[i][last]; 
+
+                                // top -> right
+                                matrix[i][last] = top; // right <- saved top
+                        }
+                }
+        }
+        
+        public static void main(String[] args) {
+                int[][] matrix = AssortedMethods.randomMatrix(10, 10, 0, 9);
+                AssortedMethods.printMatrix(matrix);
+                rotate(matrix, 10);
+                System.out.println();
+                AssortedMethods.printMatrix(matrix);
+        }
+
+}
+}}}
+
+
+= Problem =
+
+# The key to get correct index of matrix is distance from current point to the concern point.
+# Do not forget bound check
+# Noted the name of variable and comment. Formal solution is excellent. Need to study.
+
+= Reference =
+
+# [[https://github.com/gaylemcd/ctci/blob/master/java/Chapter%201/Question1_6/Question.java|Formal Solution]]
+
+<h6 class="timestamp"> Created Time: 2014/01/18 13:56:00.      Last Modified Time:  . </h6>
+
