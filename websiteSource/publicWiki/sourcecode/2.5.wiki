@@ -1,0 +1,441 @@
+%title Chapter2 Question5 
+
+<h1 class="justcenter"> Chapter2 Question5 </h1>
+
+= Question =
+
+You have two numbers represented by a linked list, where each node contains a sigle digit. The digits are stored in reverse order, such taht the 1's digit is at the head of the list. Write a function that adds the two number and returns the sum as a linked list.
+
+`FOLLOWUP`
+
+Suppose the digits are stored in forward order. Repeat the above problem.
+
+= Analysis =
+
+In reverse order, simple. add while not null, then if carry, plus to next digit.
+
+Time Complexity `O(n)`. Space Comlexity `O(n)`.
+
+= Source Code = 
+
+
+{{{class="brush: java"
+package chapter2;
+
+public class Question5 {
+    public static LinkedListNode addLinkedList( LinkedListNode lhs, LinkedListNode rhs){
+        LinkedListNode result = new LinkedListNode();
+        LinkedListNode lhsPointer = lhs;
+        LinkedListNode rhsPointer = rhs;
+        LinkedListNode resultPointer = result;
+        int carry = 0;
+        while ( lhsPointer != null && rhsPointer != null){
+            if( lhsPointer.data + rhsPointer.data + carry > 9){
+                resultPointer.data = lhsPointer.data + rhsPointer.data - 10 + carry;
+                carry = 1;
+            }else{
+                resultPointer.data = lhsPointer.data + rhsPointer.data  + carry;
+                carry = 0;
+            }
+            resultPointer.next = new LinkedListNode();
+            resultPointer = resultPointer.next;
+            lhsPointer = lhsPointer.next;
+            rhsPointer = rhsPointer.next;
+        }
+        while ( lhsPointer != null ){
+            if ( lhsPointer.data + carry > 9){
+                resultPointer.data = lhsPointer.data - 10 + carry;
+                carry = 1;
+            }else {
+                resultPointer.data = lhsPointer.data + carry;
+                carry = 0;
+            }
+            resultPointer.next = new LinkedListNode();
+            resultPointer = result.next;
+            lhsPointer = lhsPointer.next;
+        }
+        while ( rhsPointer != null ){
+            if ( rhsPointer.data + carry > 9){
+                rhsPointer.data = rhsPointer.data - 10 + carry;
+                carry = 1;
+            }else {
+                resultPointer.data = rhsPointer.data + carry;
+                carry = 0;
+            }
+            resultPointer.next = new LinkedListNode();
+            resultPointer = result.next;
+            rhsPointer = rhsPointer.next;
+        }
+        return result;
+    }
+    public static LinkedListNode addLinkedListRecursive( LinkedListNode lhs, LinkedListNode rhs, int carry){
+        if ( lhs == null && rhs == null && carry == 0)
+            return null;
+        LinkedListNode result = new LinkedListNode();
+        int value = carry;
+        if( lhs != null){
+            value += lhs.data;
+        }
+        if( rhs != null ){
+            value += rhs.data;
+        }
+        result.data = value % 10;
+        
+        if ( rhs != null || lhs != null){
+            LinkedListNode next = addLinkedListRecursive(lhs == null? null : lhs.next ,rhs == null ? null : rhs.next ,value/10);
+            result.next = next;
+        }
+        return result;
+        
+    }
+    public static void main(String[] args ){
+        LinkedListNode lhs = new LinkedListNode();
+        LinkedListNode rhs = new LinkedListNode();
+        lhs.generator(3);
+        rhs.generator(4);
+        lhs.print();
+        rhs.print();
+        LinkedListNode result = addLinkedList(lhs,rhs);// check last digit whether zero
+        LinkedListNode result2 = addLinkedListRecursive(lhs,rhs,0);
+        result.print();
+        result2.print();
+    }
+}
+
+}}}
+
+`FOLLOWUP`
+
+
+{{{class="brush: java"
+package chapter2;
+
+class sumInfo{
+    public int carry = 0;
+    public LinkedListNode result = null;
+}
+public class Question5 {
+    public static LinkedListNode addLinkedList( LinkedListNode lhs, LinkedListNode rhs){
+        LinkedListNode result = new LinkedListNode();
+        LinkedListNode lhsPointer = lhs;
+        LinkedListNode rhsPointer = rhs;
+        LinkedListNode resultPointer = result;
+        int carry = 0;
+        while ( lhsPointer != null && rhsPointer != null){
+            if( lhsPointer.data + rhsPointer.data + carry > 9){
+                resultPointer.data = lhsPointer.data + rhsPointer.data - 10 + carry;
+                carry = 1;
+            }else{
+                resultPointer.data = lhsPointer.data + rhsPointer.data  + carry;
+                carry = 0;
+            }
+            resultPointer.next = new LinkedListNode();
+            resultPointer = resultPointer.next;
+            lhsPointer = lhsPointer.next;
+            rhsPointer = rhsPointer.next;
+        }
+        while ( lhsPointer != null ){
+            if ( lhsPointer.data + carry > 9){
+                resultPointer.data = lhsPointer.data - 10 + carry;
+                carry = 1;
+            }else {
+                resultPointer.data = lhsPointer.data + carry;
+                carry = 0;
+            }
+            resultPointer.next = new LinkedListNode();
+            resultPointer = result.next;
+            lhsPointer = lhsPointer.next;
+        }
+        while ( rhsPointer != null ){
+            if ( rhsPointer.data + carry > 9){
+                rhsPointer.data = rhsPointer.data - 10 + carry;
+                carry = 1;
+            }else {
+                resultPointer.data = rhsPointer.data + carry;
+                carry = 0;
+            }
+            resultPointer.next = new LinkedListNode();
+            resultPointer = result.next;
+            rhsPointer = rhsPointer.next;
+        }
+        return result;
+    }
+    public static LinkedListNode addLinkedListRecursive( LinkedListNode lhs, LinkedListNode rhs, int carry){
+        if ( lhs == null && rhs == null && carry == 0)
+            return null;
+        LinkedListNode result = new LinkedListNode();
+        int value = carry;
+        if( lhs != null){
+            value += lhs.data;
+        }
+        if( rhs != null ){
+            value += rhs.data;
+        }
+        result.data = value % 10;
+        
+        if ( rhs != null || lhs != null){
+            LinkedListNode next = addLinkedListRecursive(lhs == null? null : lhs.next ,rhs == null ? null : rhs.next ,value/10);
+            result.next = next;
+        }
+        return result;
+        
+    }
+    private static int length( LinkedListNode head ){
+        int length = 0;
+        LinkedListNode current = head;
+        while( current != null){
+            current = current.next;
+            length ++;
+        }
+        return length;
+    }
+    private static LinkedListNode padZero ( LinkedListNode head, int len ){
+        for ( int i = 0; i < len; i++ ){
+            LinkedListNode more = new LinkedListNode(0);
+            more.next = head;
+            head = more;
+        }
+        return head;
+    }
+    private static sumInfo addLinkedListReverseRecursiveHelper( LinkedListNode lhs, LinkedListNode rhs ){
+        if ( lhs == null && rhs == null ){
+            sumInfo result = new sumInfo();
+            return result;
+        }
+        sumInfo result = new sumInfo();
+        result = addLinkedListReverseRecursiveHelper( lhs.next , rhs.next);
+        int val = result.carry + lhs.data + rhs.data;
+        LinkedListNode tmp = new LinkedListNode ( val % 10 );
+        tmp.next = result.result;
+        result.result = tmp;
+        result.carry = val / 10;
+        return result;
+    }
+    public static LinkedListNode addLinkedListReverse( LinkedListNode lhs, LinkedListNode rhs ){
+        sumInfo result = null;
+        /* Pad zero before linkedlist*/
+        int lhsLen = length( lhs ), rhsLen = length( rhs );
+        
+        if ( lhsLen > rhsLen ){
+            rhs = padZero ( rhs, lhsLen - rhsLen );
+        }else if ( rhsLen > lhsLen ){
+            lhs = padZero ( lhs, rhsLen - lhsLen );
+        }
+        //System.out.println(lhsLen + " " + rhsLen);
+        result = addLinkedListReverseRecursiveHelper ( lhs, rhs);
+        if( result.carry == 0 )
+            return result.result;
+        else{
+            LinkedListNode tmp = new LinkedListNode(result.carry);
+            tmp.next = result.result;
+            return tmp;
+        }
+    }
+    public static void main(String[] args ){
+        LinkedListNode lhs = new LinkedListNode();
+        LinkedListNode rhs = new LinkedListNode();
+        lhs.generator(3);
+        rhs.generator(4);
+        lhs.print();
+        rhs.print();
+        LinkedListNode result = addLinkedListReverse(lhs,rhs);// check last digit whether zero
+        LinkedListNode result2 = addLinkedListRecursive(lhs,rhs,0);
+        result.print();
+        //result2.print();
+    }
+}
+
+}}}
+
+= Formal Code =
+
+
+{{{class="brush: java"
+package Question2_5;
+
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.LinkedListNode;
+
+public class QuestionA {
+
+    private static LinkedListNode addLists(
+            LinkedListNode l1, LinkedListNode l2, int carry) {
+        if (l1 == null && l2 == null && carry == 0) {
+             return null;
+        }
+
+        LinkedListNode result = new LinkedListNode();
+        int value = carry;
+        if (l1 != null) {
+            value += l1.data;
+        }
+        if (l2 != null) {
+            value += l2.data;
+        }
+        result.data = value % 10;
+        if (l1 != null || l2 != null) {
+            LinkedListNode more = addLists(l1 == null ? null : l1.next, 
+                                           l2 == null ? null : l2.next, 
+                                           value >= 10 ? 1 : 0);
+            result.setNext(more);
+        }
+        return result;
+    }
+
+    public static int linkedListToInt(LinkedListNode node) {
+        int value = 0;
+        if (node.next != null) {
+            value = 10 * linkedListToInt(node.next);
+        }
+        return value + node.data;
+    }   
+
+    public static void main(String[] args) {
+        LinkedListNode lA1 = new LinkedListNode(9, null, null);
+        LinkedListNode lA2 = new LinkedListNode(9, null, lA1);
+        LinkedListNode lA3 = new LinkedListNode(9, null, lA2);
+
+        LinkedListNode lB1 = new LinkedListNode(1, null, null);
+        LinkedListNode lB2 = new LinkedListNode(0, null, lB1);
+        LinkedListNode lB3 = new LinkedListNode(0, null, lB2);  
+
+        LinkedListNode list3 = addLists(lA1, lB1, 0);
+
+        System.out.println("  " + lA1.printForward());      
+        System.out.println("+ " + lB1.printForward());          
+        System.out.println("= " + list3.printForward());    
+
+        int l1 = linkedListToInt(lA1);
+        int l2 = linkedListToInt(lB1);
+        int l3 = linkedListToInt(list3);
+
+        System.out.print(l1 + " + " + l2 + " = " + l3 + "\n");
+        System.out.print(l1 + " + " + l2 + " = " + (l1 + l2));      
+    }
+}
+}}}
+
+`FOLLOWUP`
+
+{{{class="brush: java"
+package Question2_5;
+import CtCILibrary.LinkedListNode;
+
+public class QuestionB {
+    private static int length(LinkedListNode l) {
+        if (l == null) {
+            return 0;
+        } else {
+            return 1 + length(l.next);
+        }
+    }
+
+    private static PartialSum addListsHelper(LinkedListNode l1, LinkedListNode l2) {
+        if (l1 == null && l2 == null) {
+            PartialSum sum = new PartialSum();
+            return sum;
+        }
+        PartialSum sum = addListsHelper(l1.next, l2.next);
+        int val = sum.carry + l1.data + l2.data;
+        LinkedListNode full_result = insertBefore(sum.sum, val % 10);
+        sum.sum = full_result;
+        sum.carry = val / 10;
+        return sum;
+    }
+
+    private static LinkedListNode addLists(LinkedListNode l1, LinkedListNode l2) {
+        int len1 = length(l1);
+        int len2 = length(l2);
+        if (len1 < len2) {
+            l1 = padList(l1, len2 - len1);
+        } else {
+            l2 = padList(l2, len1 - len2);
+        }
+        PartialSum sum = addListsHelper(l1, l2);
+        if (sum.carry == 0) {
+            return sum.sum;
+        } else {
+            LinkedListNode result = insertBefore(sum.sum, sum.carry);
+            return result;
+        }
+    }   
+
+    private static LinkedListNode padList(LinkedListNode l, int padding) {
+        LinkedListNode head = l;
+        for (int i = 0; i < padding; i++) {
+            LinkedListNode n = new LinkedListNode(0, null, null);
+            head.prev = n;
+            n.next = head;
+            head = n;
+        }
+        return head;
+    }
+
+    private static LinkedListNode insertBefore(LinkedListNode list, int data) {
+        LinkedListNode node = new LinkedListNode(data, null, null);
+        if (list != null) {
+            list.prev = node;
+            node.next = list;
+        }
+        return node;
+    }
+
+    public static int linkedListToInt(LinkedListNode node) {
+        int value = 0;
+        while (node != null) {
+            value = value * 10 + node.data;
+            node = node.next;
+        }
+        return value;
+    }   
+
+    public static void main(String[] args) {
+        LinkedListNode lA1 = new LinkedListNode(3, null, null);
+        LinkedListNode lA2 = new LinkedListNode(1, null, lA1);
+        LinkedListNode lA3 = new LinkedListNode(5, null, lA2);
+
+        LinkedListNode lB1 = new LinkedListNode(5, null, null);
+        LinkedListNode lB2 = new LinkedListNode(9, null, lB1);
+        LinkedListNode lB3 = new LinkedListNode(1, null, lB2);  
+
+        LinkedListNode list3 = addLists(lA1, lB1);
+
+        System.out.println("  " + lA1.printForward());      
+        System.out.println("+ " + lB1.printForward());          
+        System.out.println("= " + list3.printForward());    
+
+        int l1 = linkedListToInt(lA1);
+        int l2 = linkedListToInt(lB1);
+        int l3 = linkedListToInt(list3);
+
+        System.out.print(l1 + " + " + l2 + " = " + l3 + "\n");
+        System.out.print(l1 + " + " + l2 + " = " + (l1 + l2));      
+    }
+}
+}}}
+
+
+= Problem =
+
+# Recursive sometime is better than normal function.
+# Java - No enclosing instance of type Foo is accessible
+# About return value
+    - 
+    {{{class="brush: java"
+        private static void padZero ( LinkedListNode head, int len ){
+            head = new LinkedListNode();
+            return head;
+        }
+    }}}
+    why? *Because head is a copy* .... Stupid.
+
+    
+
+= Reference =
+
+# [[http://stackoverflow.com/questions/9560600/java-no-enclosing-instance-of-type-foo-is-accessible|Java - No enclosing instance of type Foo is accessible]]
+# [[http://stackoverflow.com/questions/6182565/java-deep-copy-shallow-copy-clone|Java: deep copy, shallow copy, clone ]]
+# [[http://www.cnblogs.com/laipDIDI/articles/2524309.html|Java传参的值传递和引用传递问题]]
+
+<h6 class="timestamp"> Created Time: 2014/02/03 13:00:28.      Last Modified Time:  . </h6>
+

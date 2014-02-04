@@ -6,6 +6,14 @@
 
 `AsterixDB` is a parelle, highly scalable semi-structured information management system with the ability to ingest, store, index, query, analyze and publish very large quantities of semistuctured data. `Asterix` is well-suited to handle use cases ranging all the way from rigid, relation-like data collections, whose types are well understood and invariant, to flexible and more complex data, where  little is known a priori and the instances in data collections are highly variant and self-describing
 
+"One Size Fits a Bunch" can offer better functionality, manageability, and performance than gluing together   multiple point solutions (e.g., Hadoop + Hive + MongoDB)
+
+# LSM indexes for dynamic data with queries
+# Spatial indexing and spatial query capabilities
+# Fuzzy indexing and query processing for similarity
+# External datasets (and datafeeds) for external data
+# Powerful graph-processing module: Pregelix
+
 == Three layer of Asterix ==
 
 The bottommost layer of `Asterix` is [[Hyracks]].
@@ -45,6 +53,7 @@ The `Asterix data management system` contains a full flexiable data model named 
 # [[http://asterix.ics.uci.edu/pub/vldb2012demo.pdf|ASTERIX: An Open Source System for "Big Dat" Management and Analysis (Demo)]]
 # [[http://asterix.ics.uci.edu/pub/IIWeb2012.pdf|ASTERIX: Scalable Warehouse-Style Web Data Integration]]
 # [[http://asterix.ics.uci.edu/pub/ASTERIX-DPD-2011.pdf|ASTERIX: towards a scalable, semistructured data platform for evolving-world models]]
+# [[https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&ved=0CEMQFjAB&url=http%3A%2F%2Fasterixdb.ics.uci.edu%2Fslides%2FASTERIX-OC-HUG-2013.pptx&ei=zdnvUt-XNdXcoASL3oL4Dw&usg=AFQjCNGEoOhletmN2w0o9GsEPuP5v10V1Q&sig2=kFGOWx-upU1jwTDnQuuU1w&bvm=bv.60444564,d.cGU|Introduce of Asterix PPT]]
 
-<h6 class="timestamp"> Created Time: 2014/01/17 22:31:58.      Last Modified Time:  . </h6>
+<h6 class="timestamp"> Created Time: 2014/01/17 22:31:58.      Last Modified Time: 2014/02/03 10:04:02 . </h6>
 

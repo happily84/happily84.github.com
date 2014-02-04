@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="image/x-icon" rel="icon" href="favicon.ico" />
+<link type="image/x-icon" rel="shortcut icon" href="favicon.ico" />
+<!--[if IE]><script type="text/javascript" src="../js/html5.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<title>Chapter2 Question4  - Zhaosheng's Personal Wiki</title>
+</head>
+<body>
+<div id="all">
+<div id="header">
+    <ul id="top-nav">
+        <li class="first"><a href="../../index.html" title="Home">Home</a></li>
+        <li><a href="../../blog/index.html" title="Blog">Blog</a></li>
+        <li class="actived"><a href="../index.html" title="Wiki">Wiki</a></li>
+        <li><a href="https://twitter.com/happily84" title="Twitter">Twitter</a></li>
+        <li><a href="http://github.com/happily84" title="Project">Project</a></li>
+        <li class="last"><a href="../../resume/resume.html" title="About Me">AboutMe</a></li>
+    </ul>
+</div>
+<div id="main">
+
+
+<p>
+<h1 class="justcenter"> Chapter2 Question4 </h1>
+</p>
+
+<h1 id="toc_1">Question</h1>
+
+<p>
+Write code to partition a linked list around a value x, such that all nodes less than x come before all nodes greater than or equal to x.
+</p>
+
+<h1 id="toc_2">Analysis</h1>
+
+<p>
+Set three pointers, one points to the last element before x, one points to x, and one points to the first element after x.
+</p>
+
+<p>
+Time complexity <code>O(N)</code>. Space complexity <code>O(1)</code>
+</p>
+
+<h1 id="toc_3">Solution</h1>
+
+<pre class="brush: java">
+package chapter2;
+
+public class Question4 {
+    public static boolean resortLinkedList ( LinkedListNode head, int value ){
+        if( head == null)
+            return false;
+        LinkedListNode current = head;
+        LinkedListNode beforeXList = new LinkedListNode();
+        LinkedListNode lastBeforeXList = beforeXList;
+        LinkedListNode afterXList = new LinkedListNode();
+        LinkedListNode lastAfterXList = afterXList;
+        LinkedListNode X = null;
+        while( current != null){
+            if ( current.data == value){
+                if ( X != null){
+                    return false;
+                }
+                X = current;
+            }else if ( current.data &lt; value){
+                lastBeforeXList.next = current;
+                lastBeforeXList = current;
+            }else if ( current.data &gt; value){
+                lastAfterXList.next = current;
+                lastAfterXList = current;
+            }
+            current = current.next;
+        }
+        if ( X == null){
+            return false;
+        }
+        X.next = afterXList.next;
+        lastBeforeXList.next = X;
+        head = beforeXList.next;
+        lastAfterXList.next = null;
+        return true;
+    }
+    public static void main(String[] args ){
+        LinkedListNode linkedList = new LinkedListNode(0);
+        linkedList.next = new LinkedListNode(10);
+        linkedList.next.next = new LinkedListNode(3);
+        linkedList.next.next.next = new LinkedListNode(2);
+        linkedList.next.next.next.next = new LinkedListNode(4);
+        linkedList.print();
+        resortLinkedList(linkedList,4);
+        linkedList.print();
+    }
+
+}
+
+</pre>
+
+<h2 id="toc_3.1">Formal Code</h2>
+
+
+<pre class="brush: java">
+codeckage Question2_4;
+
+import CtCILibrary.LinkedListNode;
+
+public class Question {
+
+    public static LinkedListNode partition(LinkedListNode node, int x) {
+        LinkedListNode beforeStart = null;
+        LinkedListNode beforeEnd = null;
+        LinkedListNode afterStart = null;
+        LinkedListNode afterEnd = null;
+
+        /* Partition list */
+        while (node != null) {
+            LinkedListNode next = node.next;
+            node.next = null;
+            if (node.data &lt; x) {
+                if (beforeStart == null) {
+                    beforeStart = node;
+                    beforeEnd = beforeStart;
+                } else {
+                    beforeEnd.next = node;
+                    beforeEnd = node;
+                }
+            } else {
+                if (afterStart == null) {
+                    afterStart = node;
+                    afterEnd = afterStart;
+                } else {
+                    afterEnd.next = node;
+                    afterEnd = node;
+                }
+            }   
+            node = next;
+        }
+
+        /* Merge before list and after list */
+        if (beforeStart == null) {
+            return afterStart;
+        }
+
+        beforeEnd.next = afterStart;
+        return beforeStart;
+    }
+
+    public static void main(String[] args) {
+        /* Create linked list */
+        int[] vals = {1, 3, 7, 5, 2, 9, 4};
+        LinkedListNode head = new LinkedListNode(vals[0], null, null);
+        LinkedListNode current = head;
+        for (int i = 1; i &lt; vals.length; i++) {
+            current = new LinkedListNode(vals[i], null, current);
+        }
+        System.out.println(head.printForward());
+
+        /* Partition */
+        LinkedListNode h = partition(head, 5);
+
+        /* Print Result */
+        System.out.println(h.printForward());
+    }
+
+}
+</pre>
+
+<h1 id="toc_4">Problem</h1>
+
+<ol>
+<li>
+No circle point in linkedlist.
+
+</ol>
+
+<h1 id="toc_5">Reference</h1>
+
+<ol>
+<li>
+<a href="https://github.com/gaylemcd/ctci/blob/master/java/Chapter%202/Question2_4/Question.java">Formal Code</a>
+
+</ol>
+
+<p>
+<h6 class="timestamp"> Created Time: 2014/02/03 11:40:21.      Last Modified Time:  . </h6>
+</p>
+
+
+</div>
+<div id="footer">
+<p>
+    <a href="index.html" id="back-home">&lsaquo; 首页</a>
+    Copyleft © 2010, Driven by <a href="http://code.google.com/p/vimwiki/">Vimwiki</a>, Theme by Zhaosheng.    </p>
+</div>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="../../css/vimwiki.js" type="text/javascript"></script>
+</body>
+</html>

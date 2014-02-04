@@ -1,0 +1,14 @@
+%title 2014-01-24 Todo List
+
+<h1 class="justcenter"> 2014-01-24 Todo List </h1>
+
+- [O] Starting Chapter 2 of `Cracking the code interview`
+    - [X] 2.1
+    - [X] 2.2
+    - [X] 2.3
+    - [ ] 2.4
+- [ ] Read `40 Java Collections Interview Questions and Answers`
+- [ ] Finish Chapter 1 of `Programming Pearls`
+- [ ] Review CS218
+
+<h6 class="timestamp"> Created Time: 2014/01/24 13:06:23.      Last Modified Time: 2014/01/24 13:06:28 . </h6>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="image/x-icon" rel="icon" href="favicon.ico" />
+<link type="image/x-icon" rel="shortcut icon" href="favicon.ico" />
+<!--[if IE]><script type="text/javascript" src="../js/html5.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<title>NoSQL  - Zhaosheng's Personal Wiki</title>
+</head>
+<body>
+<div id="all">
+<div id="header">
+    <ul id="top-nav">
+        <li class="first"><a href="../../index.html" title="Home">Home</a></li>
+        <li><a href="../../blog/index.html" title="Blog">Blog</a></li>
+        <li class="actived"><a href="../index.html" title="Wiki">Wiki</a></li>
+        <li><a href="https://twitter.com/happily84" title="Twitter">Twitter</a></li>
+        <li><a href="http://github.com/happily84" title="Project">Project</a></li>
+        <li class="last"><a href="../../resume/resume.html" title="About Me">AboutMe</a></li>
+    </ul>
+</div>
+<div id="main">
+
+
+<p>
+<h1 class="justcenter"> NoSQL </h1>
+</p>
+
+<h1 id="toc_1">What is NoSQL</h1>
+
+<p>
+NoSQL (not only SQL) is not a relational database management system (RDBMS). NoSQL is meant for Unstructured Big Data and Cloud Computing. A NoSQL database is exactly the type of database that can handle the all sort of unstructured, messy and unpredictable data that our system of engagement requires. 
+</p>
+
+<h1 id="toc_2">NoSQL VS RDBMS</h1>
+
+<ol>
+<li>
+The relational model takes data and separates it into many interrelated tables that contain rows and columns. While, NoSQL databases have a very different model.
+
+<li>
+Relational technologies have rigid schemas while NoSQL models are schemaless.
+
+<li>
+It also may not provide full ACID (atomicity, consistency, isolation, durability) guarantees, but still has a distributed and fault tolerant architecture.
+
+<li>
+The NoSQL taxonomy supports key-value stores, document store, BigTable, and graph databases.
+
+</ol>
+
+<p>
+In a word, in NoSQL,document databases are schemaless, allowing you to freely add fields to JSON documents without having to first define changes. The format of the data being inserted can be changed at any time, without application disruption.
+</p>
+
+<h1 id="toc_3">Why NoSQL</h1>
+
+<ol>
+<li>
+NoSQL has Flexible Data Model to Capture Unstructured / Semi-structured Big Data
+
+<li>
+NoSQL is highly and easily scalable
+
+<li>
+NoSQL databases are built to allow the insertion of data without a predefined schema.
+
+<li>
+Many NoSQL database technologies have excellent integrated caching capabilities, keeping frequently-used data in system memory as much as possible and removing the need for a separate caching layer that must be maintained.
+
+<li>
+Most NoSQL databases also support automatic replication, meaning that you get high availability and disaster recovery without involving separate applications to manage these tasks. The storage environment is essentially virtualized from the developer's perspective.
+
+</ol>
+
+<h1 id="toc_4">Types of NoSQL Databases</h1>
+
+<h2 id="toc_4.1">Key-Value stores</h2>
+
+<p>
+The main idea here is using a hash table where there is a unique key and a pointer to a particular item of data. The Key/Value model is the simplest and easiest to implement. But it is inefficient when you are only interested in querying or updating part of a value, among other disadvantages.
+</p>
+
+<p>
+<strong>Example</strong>: Tokyo Cabinet/Tyrant, Redis, Voldemort, Oracle BDB, Amazon SimpleDB, Riak
+</p>
+
+<h2 id="toc_4.2">Column Family Stores</h2>
+
+<p>
+These were created to store and process very large amounts of data distributed over many machines. There are still keys but they point to multiple columns. The columns are arranged by column family.
+</p>
+
+<p>
+<strong>Example</strong>: Cassandra, HBase
+</p>
+
+<h2 id="toc_4.3">Document Databases</h2>
+
+<p>
+These were inspired by Lotus Notes and are similar to key-value stores. The model is basically versioned documents that are collections of other key-value collections. The semi-structured documents are stored in formats like JSON. Document databases are essentially the next level of Key/value, allowing nested values associated with each key.  Document databases support querying more efficiently.
+</p>
+
+<p>
+<strong>Example</strong>: CouchDB, MongoDb
+</p>
+
+<h2 id="toc_4.4">Graph Databases</h2>
+
+<p>
+Instead of tables of rows and columns and the rigid structure of SQL, a flexible graph model is used which, again, can scale across multiple machines. NoSQL databases do not provide a high-level declarative query language like SQL to avoid overtime in processing. Rather, querying these databases is data-model specific. Many of the NoSQL platforms allow for RESTful interfaces to the data, while other offer query APIs.
+</p>
+
+<p>
+<strong>Example</strong>: Neo4J, InfoGrid, Infinite Graph
+</p>
+
+<h1 id="toc_5">Challenges</h1>
+
+<ol>
+<li>
+Maturity: NoSQL advocates will argue that their advancing age is a sign of their obsolescence, but for most CIOs, the maturity of the RDBMS is reassuring.
+
+<li>
+Support: Most of NoSQL Databases are open-source, but companies like to get timely and competent support when something happened.
+
+<li>
+Administration: The design goals for NoSQL may be to provide a zero-admin solution, but the current reality falls well short of that goal. NoSQL today requires a lot of skill to install and a lot of effort to maintain.
+
+<li>
+Expertise: Even a simple query requires significant programming expertise, and commonly used BI tools do not provide connectivity to NoSQL. It's far easier to find experienced RDBMS programmers or administrators than a NoSQL expert.
+
+</ol>
+
+<h1 id="toc_6">Conclusion</h1>
+
+<p>
+NoSQL databases are becoming an increasingly important part of the database landscape, and when used appropriately, can offer real benefits. However, enterprises should proceed with caution with full awareness of the legitimate limitations and issues that are associated with these databases.
+</p>
+
+<h1 id="toc_7">Reference</h1>
+
+<ol>
+<li>
+<a href="http://theprofessionalspoint.blogspot.in/2014/01/nosql-vs-rdbms-why-and-why-not-to-use.html">NoSQL vs RDBMS: Why and why not to use NoSQL over RDBMS?</a> 
+
+<li>
+<a href="http://theprofessionalspoint.blogspot.in/2014/01/types-and-examples-of-nosql-databases.html">Types and Examples of NoSQL Databases</a>
+
+<li>
+<a href="http://theprofessionalspoint.blogspot.in/2014/01/12-best-free-and-open-source-nosql.html">12 Best Free and Open Source NoSQL Databases</a>
+
+</ol>
+
+<p>
+<h6 class="timestamp"> Created Time: 2014/02/03 09:19:59.      Last Modified Time:  . </h6>
+</p>
+
+
+</div>
+<div id="footer">
+<p>
+    <a href="index.html" id="back-home">&lsaquo; 首页</a>
+    Copyleft © 2010, Driven by <a href="http://code.google.com/p/vimwiki/">Vimwiki</a>, Theme by Zhaosheng.    </p>
+</div>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="../../css/vimwiki.js" type="text/javascript"></script>
+</body>
+</html>

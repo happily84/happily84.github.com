@@ -2,7 +2,7 @@
 
 <h1 class="justcenter"> 2014-01-22 Todo List </h1>
 
-- [ ] Starting Chapter 2 of `Cracking the code interview`
+- [X] Starting Chapter 2 of `Cracking the code interview`
 - [ ] Read `40 Java Collections Interview Questions and Answers`
 - [ ] Finish Chapter 1 of `Programming Pearls`
 - [ ] Review CS218

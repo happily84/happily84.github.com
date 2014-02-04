@@ -9,7 +9,7 @@
 content1
 
 == Study Note ==
-[[review/Asterix|AsterixDB]] | [[review/Hyracks|Hyracks]] | [[review/c++0x|c++0x]] | [[review/git|Git]]
+[[review/Asterix|AsterixDB]] | [[review/Hyracks|Hyracks]] | [[review/c++0x|c++0x]] | [[review/git|Git]] | [[review/NoSQL|NoSQL]]
 
 == Uncategory ==
 

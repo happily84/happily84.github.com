@@ -41,8 +41,236 @@ Write code to remove duplicates from an unsorted linked list.
 How would you solve this problem if a temporary buffer is not allowed?
 </p>
 
+<h1 id="toc_2">Analysis</h1>
 
-<h1 id="toc_2">Reference</h1>
+<h2 id="toc_2.1">Naive Algorithm</h2>
+
+<p>
+Traverse the linked list, for each element, compare the value with other element behind this, if duplicates, delete.
+</p>
+
+<p>
+Time complexity <code>O(n^^2)</code>. Space complexity <code>O(1)</code>.
+</p>
+
+<h2 id="toc_2.2">Improved</h2>
+
+<p>
+Actually, I cannot figure out any improvement algorithm. But there is another algorithm which use <code>O(N)</code> space to store data, and exminate whether this element is already in.
+</p>
+
+<p>
+Time complexity is <code>O(N)</code>, space complexity is <code>o(n)</code>
+</p>
+
+<h1 id="toc_3">Source Code</h1>
+
+
+<pre class="brush: java">
+package chapter2;
+
+import java.util.HashSet;
+
+public class Question1 {
+    static void removeDuplicates1( LinkedListNode head ){
+        LinkedListNode current = head;
+        while( current != null ){
+            LinkedListNode compare = current;
+            while( compare.next != null){
+                if ( compare.next.data == current.data ){
+                    compare.next = compare.next.next;
+                }else
+                    compare = compare.next;
+            }
+            current = current.next;
+        }
+    }
+    static void removeDuplicates2( LinkedListNode head ){
+        LinkedListNode current = head;
+        LinkedListNode previous = null;
+        HashSet&lt;Integer&gt; exisitValue = new HashSet&lt;Integer&gt;();
+        if ( current != null ){
+            if( exisitValue.contains(current.data)){
+                previous.next = current.next;
+            }else{
+                exisitValue.add(current.data);
+                previous = current;
+            }
+            current = current.next;
+        }
+    }
+    public static void main(String[] args ){
+        LinkedListNode linkedList = new LinkedListNode();
+        linkedList.generator(10);
+        linkedList.print();
+        removeDuplicates1(linkedList);
+        linkedList.print();
+        removeDuplicates2(linkedList);
+        linkedList.print();
+        
+    }
+}
+
+</pre>
+
+<h1 id="toc_4">Formal Code</h1>
+
+<pre class="brush: java">
+package Question2_1;
+
+import java.util.Hashtable;
+
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.LinkedListNode;
+
+public class Question {
+        public static int tapB = 0;
+        public static int tapC = 0;
+        
+        public static void tap(int i) {
+                if (i == 0) {
+                        tapB++;
+                } else {
+                        tapC++;
+                }
+        }
+
+        public static void deleteDupsA(LinkedListNode n) {
+                Hashtable table = new Hashtable();
+                LinkedListNode previous = null;
+                while (n != null) {
+                        if (table.containsKey(n.data)) {
+                                previous.next = n.next;
+                        } else {
+                                table.put(n.data, true);
+                                previous = n;
+                        }
+                        n = n.next;
+                }
+        }
+        
+        public static void deleteDupsC(LinkedListNode head) {
+                if (head == null) return;
+                LinkedListNode previous = head;
+                LinkedListNode current = previous.next;
+                while (current != null) {
+                        // Look backwards for dups, and remove any that you see.
+                        LinkedListNode runner = head;
+                        while (runner != current) { 
+                                tap(1);
+                                if (runner.data == current.data) {
+                                        LinkedListNode tmp = current.next;
+                                        previous.next = tmp;
+                                        current = tmp;
+                                        /* We know we can’t have more than one dup preceding
+                                         * our element since it would have been removed 
+                                         * earlier. */
+                                    break;
+                                }
+                                runner = runner.next;
+                        }
+                        
+                        /* If runner == current, then we didn’t find any duplicate 
+                         * elements in the previous for loop.  We then need to 
+                         * increment current.  
+                         * If runner != current, then we must have hit the ‘break’ 
+                         * condition, in which case we found a dup and current has
+                         * already been incremented.*/
+                        if (runner == current) {
+                                previous = current;
+                        current = current.next;
+                        }
+                }
+        }
+        
+        public static void deleteDupsB(LinkedListNode head) {
+                if (head == null) return;
+                
+                LinkedListNode current = head;
+                while (current != null) {
+                        /* Remove all future nodes that have the same value */
+                        LinkedListNode runner = current;
+                        while (runner.next != null) { 
+                                tap(0);
+                                if (runner.next.data == current.data) {
+                                        runner.next = runner.next.next;
+                                } else {
+                                        runner = runner.next;
+                                }
+                        }
+                        current = current.next;
+                }
+        }        
+        
+        public static void main(String[] args) {        
+                LinkedListNode first = new LinkedListNode(0, null, null); //AssortedMethods.randomLinkedList(1000, 0, 2);
+                LinkedListNode head = first;
+                LinkedListNode second = first;
+                for (int i = 1; i &lt; 8; i++) {
+                        second = new LinkedListNode(i % 2, null, null);
+                        first.setNext(second);
+                        second.setPrevious(first);
+                        first = second;
+                }
+                System.out.println(head.printForward());
+                LinkedListNode clone = head.clone();
+                deleteDupsB(head);
+                deleteDupsC(clone);
+                System.out.println(tapB);
+                System.out.println(tapC);
+        }
+}
+</pre>
+
+<h1 id="toc_5">Problem</h1>
+
+<ol>
+<li>
+Always check <code>null</code>
+
+<li>
+Diffence between <code>HashMap</code>, <code>HashSet</code> and <code>Hashtable</code>
+
+<ol>
+<li>
+<code>Hashtable</code> and <code>HashMap</code>
+
+<ul>
+<li>
+<code>Hashtable</code> is synchronized, whereas <code>HashMap</code> is not. This makes <code>HashMap</code> better for non-threaded applications, as unsynchronized Objects typically perform better than synchronized ones.
+
+<li>
+<code>Hashtable</code> does not allow <code>null</code> keys or values. <code>HashMap</code> allows one <code>null</code> key and any number of <code>null</code> values.
+
+<li>
+One of HashMap's subclasses is LinkedHashMap, so in the event that you'd want predictable iteration order (which is insertion order by default), you could easily swap out the HashMap for a LinkedHashMap. This wouldn't be as easy if you were using Hashtable. 
+
+</ul>
+<li>
+<code>HashMap</code> and <code>HashSet</code>
+
+<ul>
+<li>
+key-value pair VS value set.
+
+</ul>
+</ol>
+</ol>
+
+
+<h1 id="toc_6">Reference</h1>
+
+<ol>
+<li>
+<a href="https://github.com/gaylemcd/ctci/blob/master/java/Chapter%202/Question2_1/Question.java">Formal Code</a>
+
+<li>
+<a href="http://www.pakzilla.com/2009/08/24/hashmap-vs-hashtable-vs-hashset/">Hashtable VS HashSet VS HashMap</a>
+
+<li>
+<a href="http://stackoverflow.com/questions/40471/differences-between-hashmap-and-hashtable">Differences between HashMap and Hashtable?</a>
+
+</ol>
 
 <p>
 <h6 class="timestamp"> Created Time: 2014/01/22 18:13:21.      Last Modified Time:  . </h6>

@@ -1,0 +1,143 @@
+%title Chapter2 Question6 
+
+<h1 class="justcenter"> Chapter2 Question6 </h1>
+
+= Question =
+
+Given a circular linked list, implement an algorithm which returns the node at the beginning of the loop.
+
+= Analysis =
+
+Declare two pointers Faster pointer F and slower pointer S. In each step, F moves 2 steps while S moves 1 steps. If F and S at same node again. The LinkedList is a circular LinkedList. Then reset the position of S to the start point of LinkedList. F and S move 1 step each cycle, and when they meet again. the point is the beginning of the circular. For detail, see reference 1.
+
+Time complexity `O(n)`.
+
+= Source code =
+
+{{{class="brush: java"
+package chapter2;
+
+public class Question6 {
+    public static boolean checkCircle( LinkedListNode head ){
+        LinkedListNode fastPointer = head;
+        LinkedListNode slowPointer = head;
+        while( true ){
+            if ( fastPointer == null || slowPointer == null || fastPointer.next == null)
+                return false;
+            if ( fastPointer == slowPointer )
+                return true;
+            fastPointer = fastPointer.next.next;
+            slowPointer = slowPointer.next;
+        }
+    }
+    public static LinkedListNode getCircularStartPoint( LinkedListNode head ){
+        LinkedListNode slowPointer = head;
+        LinkedListNode fastPointer = head;
+        while( true ){
+            fastPointer = fastPointer.next.next;
+            slowPointer = slowPointer.next;
+            if ( fastPointer == slowPointer ){
+                break;
+            }
+        }
+        slowPointer = head;
+        while( true ){
+            if( fastPointer == slowPointer ){
+                return fastPointer;
+            }
+            slowPointer = slowPointer.next;
+            fastPointer = fastPointer.next;
+        }
+    }
+    public static void main( String[] args ){
+        LinkedListNode head = new LinkedListNode(1);
+        head.next = new LinkedListNode(2);
+        head.next.next = new LinkedListNode(3);
+        head.next.next.next = new LinkedListNode(4);
+        head.next.next.next = head.next;
+        if ( checkCircle( head ) ){
+            System.out.println("Circular LinkedList");
+            LinkedListNode result = getCircularStartPoint( head );
+            System.out.println(result.data);
+        }
+    }
+}
+
+}}}
+
+= Formal Solution =
+
+
+{{{class="brush: java"
+codeckage Question2_6;
+
+import CtCILibrary.LinkedListNode;
+
+public class Question {
+
+    public static LinkedListNode FindBeginning(LinkedListNode head) {
+        LinkedListNode slow = head;
+        LinkedListNode fast = head; 
+
+        // Find meeting point
+        while (fast != null && fast.next != null) { 
+            slow = slow.next; 
+            fast = fast.next.next;
+            if (slow == fast) {
+                break;
+            }
+        }
+
+        // Error check - there is no meeting point, and therefore no loop
+        if (fast == null || fast.next == null) {
+            return null;
+        }
+
+        /* Move slow to Head. Keep fast at Meeting Point. Each are k steps
+        /* from the Loop Start. If they move at the same pace, they must
+         * meet at Loop Start. */
+        slow = head; 
+        while (slow != fast) { 
+            slow = slow.next; 
+            fast = fast.next; 
+        }
+
+        // Both now point to the start of the loop.
+        return fast;
+    }
+
+    public static void main(String[] args) {
+        int list_length = 100;
+        int k = 10;
+
+        // Create linked list
+        LinkedListNode[] nodes = new LinkedListNode[list_length];
+        for (int i = 0; i < list_length; i++) {
+            nodes[i] = new LinkedListNode(i, null, i > 0 ? nodes[i - 1] : null);
+        }
+
+        // Create loop;
+        nodes[list_length - 1].next = nodes[list_length - k];
+
+        LinkedListNode loop = FindBeginning(nodes[0]);
+        if (loop == null) {
+            System.out.println("No Cycle.");
+        } else {
+            System.out.println(loop.data);
+        }
+    }
+
+}
+}}}
+
+= Problem =
+
+# in while loop, avoid to use `while(true` as possible.
+
+= Reference =
+
+# [[http://umairsaeed.com/2011/06/23/finding-the-start-of-a-loop-in-a-circular-linked-list/|Finding the Start of a Loop in a Circular Linked List]]
+# [[https://github.com/gaylemcd/ctci/blob/master/java/Chapter%202/Question2_6/Question.java|Formal Solution]]
+
+<h6 class="timestamp"> Created Time: 2014/02/04 10:22:00.      Last Modified Time:  . </h6>
+
